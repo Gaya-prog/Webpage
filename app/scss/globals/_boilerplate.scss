@@ -1,0 +1,67 @@
+@use '../util' as u;
+
+html {
+    box-sizing: border-box; // Sets box model behavior
+    font-size: 100%; // Default font size for scalable rem units
+    margin: 0; // Reset browser default margin
+    padding: 0; // Reset browser default padding
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit; // Ensures consistent box-sizing for all elements
+}
+
+body {
+    margin: 0; // Removes default body margin
+    padding: 0; // Removes default body padding
+    font-family: u.$font; // Utilizes the font variable from utilities
+    background-color: var(--background-color); // Sets background color from CSS variable
+    color: var(--text-dark); // Sets text color using a CSS variable
+}
+
+img {
+    display: block; // Ensures images don’t leave unexpected gaps
+    height: auto; // Maintains aspect ratio
+    width: 100%; // Makes images responsive
+}
+
+figure,
+blockquote {
+    margin: 0; // Removes default margin for better control
+}
+
+header ul,
+footer ul {
+    margin: 0; // Resets default unordered list margin
+    padding: 0; // Resets default unordered list padding
+
+    li {
+        list-style-type: none; // Removes bullet points for list items
+    }
+}
+
+.visually-hidden {
+    position: absolute; // Removes element from document flow
+    left: -10000px; // Places it far offscreen
+    top: auto;
+    width: 1px; // Shrinks to minimal size
+    height: 1px; // Shrinks to minimal size
+    overflow: hidden; // Hides overflowing content
+
+    &:focus {
+        left: 0px; // Brings element back into view
+        width: auto; // Resets width
+        height: auto; // Resets height
+        background-color: #fff; // Adds a white background for visibility
+        padding: 0.5rem; // Adds padding for better focus experience
+        border: 1px solid; // Highlights the focused element
+    }
+}
+
+.hover-fade {
+    &:hover {
+        opacity: 0.8; // Slightly reduces opacity for a hover effect
+    }
+}

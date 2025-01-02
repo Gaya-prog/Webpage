@@ -1,0 +1,37 @@
+:root { 
+    /* Define global color variables to ensure consistent color use throughout the site */
+    
+    --main-bg: hsl(0, 0%, 100%); /* White background color for main areas */
+    --text-dark: hsl(233, 14%, 25%); /* Dark text color */
+    --text-light: hsl(0, 0%, 100%); /* Light text color, typically for dark backgrounds */
+    --text-link-hover: hsl(320, 85%, 41%);
+    --hero-bg: hsl(232, 58%, 55%); /* Background color for hero section */
+    --header-bg:hsl(143, 68%, 22%); /* Background color for header, matches hero */
+    
+    /* Primary button styling variables */
+    --button-primary-bg: hsl(180, 100%, 42%); /* Primary button background color */
+    --button-primary-bg-hover: hsl(180, 100%, 37%); /* Darker color for primary button on hover */
+    --button-primary-white-bg: hsl(0, 0%, 100%); /* Primary button background color */
+    --button-primary-white-bg-hover: hsl(0, 0%, 100%); /* Darker color for primary button on hover */
+    --button-primary-text: hsl(233, 14%, 25%); /* Dark text color for primary buttons */
+   
+    /* Secondary button styling variables */
+    --button-secondary-bg: transparent; /* Transparent background for secondary button */
+    --button-secondary-bg-hover: hsl(0, 0%, 100%); /* White background on hover for secondary button */
+    --button-secondary-border: hsl(0, 0%, 100%); /* White border for secondary button */
+    --button-secondary-text: hsl(0, 0%, 100%); /* White text color for secondary button */
+    --button-secondary-text-hover: var(--hero-bg); /* Text color on hover for secondary button, matches hero background */
+    --fullwidth-bg: hsl(320, 85%, 41%); /* Background color for full-width sections */
+    --gradient1: hsl(250, 14%, 25%);
+    --gradient2: hsl(232, 58%, 55%);
+    --gradient3: hsl(180, 100%, 42%);
+   }
+   
+   .magenta { 
+       background-color: hsl(300, 100%, 35%); /* Strong magenta background color */
+   }
+   
+   .green { 
+       background-color: hsl(120, 95%, 17%); /* Dark green background color */
+   }
+   

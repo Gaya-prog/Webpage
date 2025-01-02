@@ -1,0 +1,47 @@
+@use '../util/' as u; // Import the utility functions module with the alias 'u'
+
+.hero {
+  color: var(--text-dark); // Set text color using a custom property
+
+  &__wrapper { // Wrapper for the hero content (image and text)
+    padding: 0px;
+    position: relative;
+  }
+
+  &__video {
+    display: block; // Ensure the video is displayed as a block element
+    padding-block: 0px;
+    width: 100%;
+    height: auto;
+
+    @include u.breakpoint(large) { 
+      // Add any styles for the 'large' breakpoint here
+    }
+  }
+
+  &__theme {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); // Fine-tune centering
+    z-index: 1; // Ensure this is above the video
+    text-align: center;
+    padding: 20px 20px 10px;
+    background-color: lightgrey;
+    background-repeat: repeat;
+    width: u.rem(450);
+    color: var(--text-light);
+  }
+
+  &__headline {
+    font-size: u.rem(30);
+    font-weight: 600;
+    line-height: u.rem(40);
+    padding-bottom: u.rem(12);
+  }
+
+  &__button {
+
+  }
+}

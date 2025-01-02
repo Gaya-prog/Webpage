@@ -1,0 +1,10 @@
+.wrapper {
+    width: min(100% - 3rem, 75rem);
+    margin-inline: auto;
+    padding-block: 60px;
+  }
+  @media (min-width: 56.25em) {
+    .wrapper {
+      padding-block: 80px;
+    }
+  }/*# sourceMappingURL=wrapper.css.map */

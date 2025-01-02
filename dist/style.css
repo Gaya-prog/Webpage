@@ -1,0 +1,271 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans 3", serif;
+  background-color: var(--background-color);
+  color: var(--text-dark);
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+figure,
+blockquote {
+  margin: 0;
+}
+
+header ul,
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+header ul li,
+footer ul li {
+  list-style-type: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.visually-hidden:focus {
+  left: 0px;
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  padding: 0.5rem;
+  border: 1px solid;
+}
+
+.hover-fade:hover {
+  opacity: 0.8;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.625rem;
+  font-size: clamp(2.625rem, 1.77rem + 3.64vw, 4.5rem);
+  line-height: 1;
+  margin-block-end: 1.25rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 1.91rem + 1.45vw, 3rem);
+  line-height: 1.1;
+  margin-block-end: 1.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+p {
+  margin-top: 0;
+  font-size: 1.125rem;
+  line-height: 1.3;
+}
+p.medium {
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.136rem + 0.48vw, 1.5rem);
+}
+p.large {
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1.39rem + 0.48vw, 1.75rem);
+  margin-block-end: 2.5rem;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+:root {
+  /* Define global color variables to ensure consistent color use throughout the site */
+  --main-bg: hsl(0, 0%, 100%); /* White background color for main areas */
+  --text-dark: hsl(233, 14%, 25%); /* Dark text color */
+  --text-light: hsl(0, 0%, 100%); /* Light text color, typically for dark backgrounds */
+  --text-link-hover: hsl(320, 85%, 41%);
+  --hero-bg: hsl(232, 58%, 55%); /* Background color for hero section */
+  --header-bg:hsl(143, 68%, 22%); /* Background color for header, matches hero */
+  /* Primary button styling variables */
+  --button-primary-bg: hsl(180, 100%, 42%); /* Primary button background color */
+  --button-primary-bg-hover: hsl(180, 100%, 37%); /* Darker color for primary button on hover */
+  --button-primary-white-bg: hsl(0, 0%, 100%); /* Primary button background color */
+  --button-primary-white-bg-hover: hsl(0, 0%, 100%); /* Darker color for primary button on hover */
+  --button-primary-text: hsl(233, 14%, 25%); /* Dark text color for primary buttons */
+  /* Secondary button styling variables */
+  --button-secondary-bg: transparent; /* Transparent background for secondary button */
+  --button-secondary-bg-hover: hsl(0, 0%, 100%); /* White background on hover for secondary button */
+  --button-secondary-border: hsl(0, 0%, 100%); /* White border for secondary button */
+  --button-secondary-text: hsl(0, 0%, 100%); /* White text color for secondary button */
+  --button-secondary-text-hover: var(--hero-bg); /* Text color on hover for secondary button, matches hero background */
+  --fullwidth-bg: hsl(320, 85%, 41%); /* Background color for full-width sections */
+  --gradient1: hsl(250, 14%, 25%);
+  --gradient2: hsl(232, 58%, 55%);
+  --gradient3: hsl(180, 100%, 42%);
+}
+
+.magenta {
+  background-color: hsl(300, 100%, 35%); /* Strong magenta background color */
+}
+
+.green {
+  background-color: hsl(120, 95%, 17%); /* Dark green background color */
+}
+
+.fullwidth {
+  color: var(--text-light);
+  text-align: center;
+}
+.fullwidth__description {
+  max-width: 70ch;
+  margin-inline: auto;
+  margin-block-end: 2.5rem;
+}
+
+.wrapper {
+  width: min(100% - 3rem, 75rem);
+  margin-inline: auto;
+  padding-block: 60px;
+}
+@media (min-width: 56.25em) {
+  .wrapper {
+    padding-block: 80px;
+  }
+}
+
+.topnav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 12px;
+}
+.topnav__logo {
+  width: 3.75rem;
+}
+@media (min-width: 56.25em) {
+  .topnav__logo {
+    width: 8rem;
+  }
+}
+.topnav__site-tagline {
+  display: flex;
+  gap: 20px;
+  font-size: 1rem;
+  padding: 0px 30px;
+}
+@media (min-width: 56.25em) {
+  .topnav__site-tagline {
+    gap: 40px;
+    font-size: 1.375rem;
+  }
+}
+.topnav__header-donate-link {
+  display: block;
+  float: right;
+  background-color: #6C0000;
+  color: var(--text-light);
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 10px 10px 8px;
+}
+@media (min-width: 56.25em) {
+  .topnav__header-donate-link {
+    font-size: 3.125rem;
+  }
+}
+.topnav__header-donate-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.topnav__links {
+  justify-content: center;
+  align-items: center;
+  background-color: var(--header-bg);
+  display: flex;
+  gap: 20px;
+  padding: 5px;
+}
+@media (min-width: 56.25em) {
+  .topnav__links {
+    gap: 40px;
+  }
+}
+.topnav__link {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+@media (min-width: 56.25em) {
+  .topnav__link {
+    font-size: 1rem;
+  }
+}
+.topnav__link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.hero {
+  color: var(--text-dark);
+}
+.hero__wrapper {
+  padding: 0px;
+  position: relative;
+}
+.hero__video {
+  display: block;
+  padding-block: 0px;
+  width: 100%;
+  height: auto;
+}
+.hero__theme {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  padding: 20px 20px 10px;
+  background-color: lightgrey;
+  background-repeat: repeat;
+  width: 28.125rem;
+  color: var(--text-light);
+}
+.hero__headline {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  padding-bottom: 0.75rem;
+}/*# sourceMappingURL=style.css.map */

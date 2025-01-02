@@ -1,0 +1,25 @@
+@use 'sass:math'; // Import the built-in Sass math module for mathematical operations.
+
+// Define a function to convert pixels to rem units.
+@function rem($pixel) {
+    @if math.is-unitless($pixel) { // Check if the input ($pixel) has no unit.
+        @return math.div($pixel, 16) + rem; // Divide the input by 16 (base font-size) to get rem units.
+    }
+    @else {
+        @error 'Don\'t use units when using the rem() function; only numbers.'; // Error if input has a unit.
+    }
+}
+
+// Define a function to convert pixels to em units.
+@function em($pixel) {
+    @if math.is-unitless($pixel) { // Check if the input ($pixel) has no unit.
+        @return math.div($pixel, 16) + em; // Divide the input by 16 (base font-size) to get em units.
+    }
+    @else {
+        @error 'Don\'t use units when using the em() function; only numbers.'; // Error if input has a unit.
+    }
+}
+
+// rem() and em() are custom functions that convert a pixel value (given as a unitless number) to rem or em units based on a base size of 16 pixels.
+// Each function checks if the input is unitless and returns the converted value in the specified unit (rem or em). 
+// If the input has a unit, an error message is shown, ensuring that only raw numbers are passed.
