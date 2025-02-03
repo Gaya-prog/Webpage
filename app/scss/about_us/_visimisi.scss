@@ -1,0 +1,47 @@
+@use '../util/' as u;
+
+.visi-misi {
+  margin-bottom: 30px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: u.rem(30);
+    margin-bottom: u.rem(40);
+  }
+
+  &__image {
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+    @include u.breakpoint(large) {
+      height: 600px;
+    }
+  }
+
+  &__theme {
+    text-align: justify;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__statement {
+  } 
+}
+
+@media (max-width: 768px) {
+    .visi-misi__wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .visi-misi__image {
+      width: 100%;
+      margin-bottom: u.rem(10);
+    }
+  
+    .visi-misi__theme {
+    }
+  }

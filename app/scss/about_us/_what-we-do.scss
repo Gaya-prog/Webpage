@@ -1,0 +1,66 @@
+@use '../util/' as u;
+
+.what-we-do {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: u.rem(32);
+    overflow: hidden;
+    margin-bottom: u.rem(40);
+
+    @include u.breakpoint(large) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: u.rem(10);
+    margin-bottom: u.rem(16);
+    object-fit: cover;
+
+    @include u.breakpoint(large) {
+      width: 40%;
+      margin-bottom: u.rem(20);
+      height: 300px;
+    }
+  }
+
+  &__theme {
+    text-align: justify;
+  }
+
+  &__title {
+    text-align: center;
+    
+
+    @include u.breakpoint(large) {
+    }
+  }
+
+  &__statement {
+
+    @include u.breakpoint(large) {
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .what-we-do__wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .what-we-do__image {
+    width: 100%;
+    margin-bottom: u.rem(16);
+  }
+
+  .what-we-do__theme {
+    width: 100%;
+  }
+}

@@ -1,0 +1,76 @@
+@use '..//util/' as u;
+
+.home-news {
+    color: var(--text-light);
+    background-image: url(/images/sand.JPG);
+    background-size: cover;
+    padding: 15px;
+    border-bottom: 4px solid black;
+}
+
+.home-news__wrapper {
+    padding: 0;
+}
+
+.home-news__a {
+    color: var(--text-light);
+}
+
+.home-news__header-bar {
+    text-align: center;
+    font-size: u.rem(21);
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.home-news__flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Allow for 2 columns on large screens */
+    gap: 30px; /* Equal spacing between grid items */
+    justify-items: center; /* Center the grid items */
+    align-items: start; /* Align items to the top */
+    color: var(--text-dark);
+
+    @include u.breakpoint(large) {
+        grid-template-columns: repeat(2, 1fr); /* Two items per row on larger screens */
+    }
+}
+
+.home-news__excerpt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 750px; /* Set equal height for all items */
+    padding: 10px 10px 20px 10px;
+    background-color: hsl(60, 29%, 64%);
+    border-radius: 20px;
+    width: 100%; /* Ensure it takes the full width of the grid cell */
+    max-width: 400px; /* Optional: restrict max width */
+}
+
+.home-news__time {
+    font-weight: 600;
+    font-size: u.rem(20);
+    line-height: 1.25;
+    text-transform: uppercase;
+    padding-bottom: u.rem(10);
+}
+
+.home-news__image {
+    margin-bottom: 8px;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.home-news__title {
+    font-weight: 600;
+    font-size: u.rem(15);
+    line-height: 1.27;
+    padding-bottom: 10px;
+}
+
+.home-news__button {
+}
+

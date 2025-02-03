@@ -1,0 +1,65 @@
+@use '../util/' as u;
+
+.home-publication {
+    background-color: var(--header-bg);
+    object-fit: cover;
+    padding: 15px;
+    color: var(--text-light);
+    border-bottom: 4px solid black;
+
+    &__wrapper{
+        padding: 0%;
+        
+        @include u.breakpoint(large) { 
+            }
+    }
+
+    &__header-bar{
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        padding: 15px 0px;
+    }
+
+    &__flex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: -0.625rem;
+        margin-right: -0.625rem;
+        color: var(--text-dark);
+        gap: 15px;
+        padding: 10px;
+        
+    }
+
+    &__item{
+        padding: 10px;
+        margin: 0 auto;
+        position: relative;
+        text-align: justify;
+        align-items: center;
+        background-color: hsl(60, 29%, 64%);
+        max-width: 130ch;
+        border-radius: 20px;
+    }
+
+    &__logo{
+        height: 35px;
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    &__title{
+        padding: 0.45em 0 0.1em;
+    }
+
+    &__description{
+        color: var(--text-dark);
+    }
+
+    &__button{
+        bottom: 0;
+        left: 1.25em;
+    }
+}

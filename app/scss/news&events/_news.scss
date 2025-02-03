@@ -1,0 +1,75 @@
+@use '../util/' as u;
+
+.news{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    
+    &__item {
+        background-color: var(--flex-bg);
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease;
+        padding: 15px;
+    }
+    
+    &__item:hover {
+        transform: scale(1.05);
+    }
+    
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+    
+    &__time {
+    }
+    
+    &__item p {
+    }
+    
+}
+
+/* Add spacing between sections */
+.news, .detailed-news {
+    margin-bottom: 80px;
+}
+
+/* Styling for the detailed news section */
+.detailed-news {
+    padding: 20px;
+
+/* Flex layout for the detailed news content */
+&__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+
+    @include u.breakpoint(large){
+        flex-wrap: nowrap;
+    }
+}
+
+/* Image styling for the detailed news */
+&__image {
+    width: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    @include u.breakpoint(large){
+        width: 600px;
+    }
+}
+
+/* Adjust text alignment and spacing */
+&__content div {
+    flex: 1;
+    line-height: 1.6;
+    color: #333;
+}
+}

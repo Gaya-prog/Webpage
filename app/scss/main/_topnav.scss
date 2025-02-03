@@ -1,0 +1,168 @@
+@use '../util/' as u; // Import the utilities module and alias it as 'u' for easy access.
+
+.topnav {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: u.rem(10);
+    margin: 0 auto;
+    background-image: url(/images/sand.JPG);
+    background-size: cover;
+
+    @include u.breakpoint(large) {
+      padding: u.rem(20);
+    }
+  }
+
+  &__homelink {}
+
+  &__logo {
+    max-width: u.rem(250);
+
+    @include u.breakpoint(large) {
+      max-width: u.rem(400);
+    }
+  }
+
+  &__site-tagline {
+    display: flex;
+    gap: u.rem(10);
+    font-size: u.rem(20);
+    padding-right: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    text-align: center;
+
+    @include u.breakpoint(large) {
+      gap: u.rem(20);
+      font-size: u.rem(64);
+    }
+  }
+
+  &__header-donate-link {
+    border: u.rem(5) solid var(--text-dark);
+    border-radius: u.rem(36);
+    background-color: var(--button-primary-bg);
+    color: var(--text-light);
+    text-transform: uppercase;
+    font-size: u.rem(18);
+    font-weight: 700;
+    padding: 8px 8px 6px;
+    text-align: center;
+    white-space: nowrap;
+
+    @include u.breakpoint(large) {
+      font-size: u.rem(30);
+    }
+
+    &:hover {
+      background-color: var(--button-hover-bg, #333); // Added hover effect color
+    }
+  }
+
+  &__links {
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    background-color: var(--header-bg);
+
+    @include u.breakpoint(large) {
+    }
+  }
+
+  &__button {
+    font-size: u.rem(20);
+    text-align: center;
+
+    @include u.breakpoint(large) {
+      font-size: u.rem(24);
+    }
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+  }
+
+  // Dropdown Menu
+  &__dropdown {
+    position: relative;
+
+    &-link {
+      cursor: pointer;
+      color: var(--text-light);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: u.rem(12);
+
+      @include u.breakpoint(large) {
+        font-size: u.rem(17);
+      }
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+      }
+    }
+
+    &-menu {
+      display: none; /* Hidden by default */
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--button-primary-bg);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      min-width: u.rem(180);
+      border-radius: u.rem(4);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+
+      li {
+        border-bottom: u.rem(2) solid var(--text-dark);
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        a {
+          color: var(--text-light);
+          padding: u.rem(10) u.rem(15);
+          display: block;
+          text-decoration: none;
+
+          &:hover,
+          &:focus,
+          &.active {
+            color: white;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+          }
+
+          &:hover {
+            background-color: var(--button-hover-bg);
+          }
+        }
+      }
+    }
+
+    // Ensure the dropdown is visible on hover
+    &:hover &-menu {
+      display: block;
+    }
+
+    // Keep dropdown visible when navigating sublinks
+    &-link:focus + &-menu,
+    &-link:hover + &-menu {
+      display: block;
+    }
+  }
+}

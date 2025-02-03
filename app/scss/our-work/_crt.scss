@@ -1,0 +1,228 @@
+@use '../util/' as u;
+
+.our-work {
+  &__main-title {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__main-subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+/* Section: What is CRT */
+.what-is-crt {
+  margin: 30px 0;
+
+  &__title {
+    text-align: center;
+    background-color: var(--flex-head-bg);
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @include u.breakpoint(large){
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto; // Center the image
+    display: block;
+
+    @include u.breakpoint(large) {
+      max-width: 50%;
+    }
+  }
+
+  &__description {
+    padding-inline-start: 0;
+    font-size: u.rem(20);
+  }
+
+  &__flex{
+    border-radius: 10px;
+    gap: 10px;
+    background: var(--flex-bg);
+    padding: 10px;
+    margin-block-end: 15px;
+  }
+}
+
+/* Section: LAMATu Table */
+.lamatu-table {
+  margin: 40px 0; 
+
+  &__title {
+    text-align: center;
+    background-color: var(--flex-head-bg);
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  &-container {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 0 u.rem(311);
+  font-size: u.rem(10);
+
+  @include u.breakpoint(large) {
+    font-size: u.rem(16);
+  }
+
+  th, td {
+    padding: u.rem(8);
+    text-align: left;
+  }
+
+  th {
+    background-color: var(--table-bg);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  tr:nth-child(even) td {
+    background-color: var(--table-bg);
+  }
+
+  tr:hover {
+    background-color: var(--table-hover-bg, #e9e9e9);
+  }
+  }
+}
+
+/* Section: Why Switch CRT */
+.why-switch-crt {
+  margin: 40px 0;
+
+  &__title {
+    text-align: center;
+    background-color: var(--flex-head-bg);
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  &__content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+
+
+  .circle-background {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--circle-bg-alt); /* Set your desired circle color */
+    z-index: -1; /* Places circles behind the content */
+}
+
+.circle1 {
+    width: 230px;
+    height: 230px;
+    top: -4%;
+    left: 12%;
+}
+
+.circle2 {
+    width: 150px;
+    height: 150px;
+    top: 47%;
+    left: 84%;
+    transform: translate(-50%, -50%);
+}
+
+.circle3 {
+    width: 100px;
+    height: 100px;
+    bottom: 0%;
+    right: 21%;
+}
+
+  &__image {
+    @extend .what-is-crt__image; // Reuse the responsive image styling
+  }
+
+  &__description {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+}
+
+/* Section: Why LAMATu */
+.why-lamatu {
+  margin: 40px 0;
+
+  &__container {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    background-color: var(--flex-head-bg);
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  &__description {
+    margin-bottom: 20px;
+  }
+
+  &__comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: u.rem(20) 0;
+    font-size: u.rem(10);
+  
+    @include u.breakpoint(large) {
+      font-size: u.rem(16);
+    }
+  
+    th, td {
+      padding: u.rem(8);
+      text-align: left;
+    }
+  
+    th {
+      background-color: var(--table-bg);
+      font-weight: bold;
+      text-align: center;
+    }
+  
+    tr:nth-child(even) td {
+      background-color: var(--table-bg);
+    }
+  
+    tr:hover {
+      background-color: var(--table-hover-bg, #e9e9e9);
+    }
+  }
+}
+
+/* Section: Environmental Pledge */
+.environmental-pledge {
+  margin: 40px 0;
+  text-align: center;
+
+  &__title {
+    background-color: var(--flex-head-bg);
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  &__content {
+    line-height: 1.6;
+  }
+}

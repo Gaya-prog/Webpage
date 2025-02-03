@@ -1,0 +1,9 @@
+@use '../util' as u;
+
+.wrapper{ //new class
+   //width: min(100% - u.rem(30), u.rem(1400)); //100% width of the screen - 48px in rem unit to have space and max to 1200 width
+   margin-inline: auto; //make sure the content centered in the page
+
+    @include u.breakpoint(large){
+    }
+}

@@ -1,0 +1,95 @@
+@use '../util/' as u; // Import the utilities module and alias it as 'u'
+
+.agriculture {
+    &__wrapper {
+
+        @include u.breakpoint(large) {
+        }
+    }
+
+    &__image-wrapper {
+        margin-bottom: 10px;
+        
+        @include u.breakpoint(large) {
+        }
+    }
+
+    &__image {
+        border-radius: u.rem(10);
+        box-shadow: 0 u.rem(6) u.rem(12) rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+        margin-bottom: u.rem(32); // Space below the image if necessary
+        max-width: 100%; // Ensure it doesn't overflow the container
+        margin: 0 auto; // Center the image horizontally
+      
+        @include u.breakpoint(large) {
+          // Adjustments for larger screens if necessary
+          width: 75%;
+        }
+      }
+
+    &__theme {
+
+        @include u.breakpoint(large) {
+        }
+    }
+
+    &__title {
+        font-size: u.rem(24);
+        font-weight: bold;
+        margin-bottom: u.rem(20);
+        text-align: center;
+
+        @include u.breakpoint(large) {
+            font-size: u.rem(30);
+        }
+    }
+
+    &__statement {
+        margin-bottom: u.rem(20);
+        text-align: center;
+
+        @include u.breakpoint(large) {
+        }
+    }
+
+    // Table Styles
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: u.rem(20);
+        margin-bottom: u.rem(20);
+        font-size: u.rem(10);
+
+
+        @include u.breakpoint(large) {
+            font-size: u.rem(16);
+        }
+
+        th, td {
+            padding: u.rem(8);
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--table-bg);
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+        }
+
+        td {
+            background-color: var(--table-row-bg, #ffffff);
+        }
+
+        tr:nth-child(even) {
+            td {
+            background-color: var(--table-bg);
+            }
+        }
+
+        tr:hover {
+            background-color: var(--table-hover-bg, #e9e9e9);
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.circle-gradient {
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #bef264, #84cc16);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: -1.5rem; /* -mb-6 */
+    margin-right: -3rem; /* -mr-12 */
+  }
+  
+  @media (min-width: 768px) {
+    .circle-gradient {
+      margin-bottom: -2rem; /* -mb-8 */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .circle-gradient {
+      width: 16rem;
+      height: 16rem;
+      margin-bottom: -4rem; /* -mb-16 */
+      margin-right: -4rem; /* -mr-16 */
+    }
+  }

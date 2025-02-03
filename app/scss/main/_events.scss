@@ -1,0 +1,48 @@
+@use '../util/' as u;
+
+    .home-events {
+    background-color: var(--event-bg);
+    background-size: cover;
+    padding: 15px;
+    border-bottom: 4px solid black;
+
+    &__wrapper{
+        padding: 0%;
+    }
+
+    &__header-bar{
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--text-light);
+    }
+
+    &__image{
+        float: none;
+        text-align: center;
+        padding-bottom: 1.25em;
+
+        @include u.breakpoint(large) { 
+        float: left;
+        }
+    }
+
+    &__content{
+        margin-left: 0%;
+        margin-bottom: 15px;
+        background-color: hsl(60, 29%, 64%);
+        padding: 10px;
+        border-radius: 20px;
+        
+        @include u.breakpoint(large) {
+        margin-left: u.rem(305);
+        }
+    }
+
+    &__title{
+        padding: 7px 0px 9px;
+    }
+
+    &__description{
+        padding-bottom: 9px;
+    }
+}

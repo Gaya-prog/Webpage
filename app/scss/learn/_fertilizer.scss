@@ -1,0 +1,133 @@
+@use '../util/' as u;
+
+.fertilizer {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(30);
+
+    @include u.breakpoint(large) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: u.rem(30);
+    }
+  }
+
+  &__image-wrapper {
+    position: relative; /* Allow absolute positioning of the circle */
+    width: 100%;
+    margin-bottom: u.rem(16);
+
+    @include u.breakpoint(large) {
+      width: 45%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: u.rem(10);
+    box-shadow: 0 u.rem(6) u.rem(12) rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    height: auto;
+
+    @include u.breakpoint(large) {
+      height: u.rem(500);
+    }
+  }
+
+  &__theme {
+    text-align: justify;
+    width: 100%;
+
+    @include u.breakpoint(large) {
+      width: 50%;
+    }
+  }
+
+  &__title {
+    margin-bottom: u.rem(20);
+    text-align: center;
+    background-color: var(--flex-head-bg);
+    border-radius: 20px;
+    padding: 10px;
+
+    @include u.breakpoint(large) {
+      text-align: left;
+    }
+  }
+
+  &__statement {
+
+    @include u.breakpoint(large) {
+    }
+  }
+}
+
+.food{
+
+  &__wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: u.rem(32);
+    flex-wrap: wrap;
+
+    @include u.breakpoint(large) {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: u.rem(30);
+  }
+}
+
+  &__image-wrapper{
+    position: relative; /* Allow absolute positioning of the circle */
+    width: 100%;
+    margin-bottom: u.rem(20);
+
+    @include u.breakpoint(large) {
+      width: 45%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image{
+    border-radius: u.rem(10);
+    object-fit: cover;
+    gap: u.rem(30);
+    margin-block-end: 30px;
+
+    @include u.breakpoint(large) {
+      height: u.rem(585);
+    }
+  }
+
+  &__theme{
+    text-align: justify;
+    width: 100%;
+
+    @include u.breakpoint(large) {
+      width: 50%;
+    }
+  }
+
+  &__headline{
+    margin-bottom: 20px;
+    background-color: var(--flex-head-bg);
+    border-radius: 20px;
+    padding: 15px;
+  }
+
+  &__title{
+    margin-bottom: 20px;
+    background-color: var(--flex-head-bg);
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  &__statement{
+
+    @include u.breakpoint(large) {
+    }
+  }
+}

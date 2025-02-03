@@ -1,0 +1,83 @@
+@use '../util/' as u;
+
+.lamatu {
+  &__wrapper {
+    position: relative; // Make this container relative for positioning the headline
+    display: block;
+    align-items: center;
+    text-align: center;
+    background-color: hsl(60deg 23.81% 89.2% / 87.4%);
+    padding: 20px;
+  }
+
+  &__headline-container {
+    margin-bottom: 48px;
+    background-color: var(--flex-head-bg);
+    border-radius: 20px;
+  }
+
+  &__headline {
+    margin-bottom: 0;
+  }
+
+  &__image {
+    border-radius: u.rem(10);
+    box-shadow: 0 u.rem(6) u.rem(12) rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    margin-bottom: u.rem(32); // Space below the image if necessary
+    max-width: 100%; // Ensure it doesn't overflow the container
+    margin: 0 auto; // Center the image horizontally
+  
+    @include u.breakpoint(large) {
+      // Adjustments for larger screens if necessary
+      width: 75%;
+    }
+  }
+  
+  
+
+  &__theme {
+    padding-top: u.rem(16);
+  }
+
+  &__title {
+    margin-bottom: u.rem(16);
+    text-align: center;
+    background-color: hsl(60, 29%, 64%);
+    border-radius: 20px;
+    padding: 10px;
+
+    @include u.breakpoint(large) {
+    }
+  }
+
+  &__statement {
+    text-align: justify;
+    padding-block-end: 20px;
+    
+    @include u.breakpoint(large) {
+    }
+  }
+
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: u.rem(15); // Space between items
+    justify-content: space-between; // Align items evenly
+    margin-block-end: u.rem(30); // Bottom margin
+  }
+
+  &__flex-item {
+    flex: 1 1 calc(33.33% - u.rem(16)); // Ensures all items have equal sizes
+    padding: u.rem(15); // Space inside each box
+    margin: u.rem(8); // Adds spacing between flex items
+    background-color: var(--flex-bg); // Background color for visibility
+    box-shadow: 0 u.rem(4) u.rem(6) rgba(0, 0, 0, 0.1); // Subtle shadow
+    border-radius: u.rem(8); // Rounded corners
+    text-align: center; // Centers text inside the box
+    height: u.rem(200); // Ensures consistent height
+    display: flex; // Flexbox for content alignment
+    flex-direction: column; // Align content vertically
+    justify-content: center; // Center content vertically
+}
+}

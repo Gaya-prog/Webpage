@@ -1,0 +1,50 @@
+@use '../util' as u; // Import the utility module and alias it as 'u' for easy access.
+
+// Base styles for the .button class
+.button {
+    font-size: u.rem(12); // Set font size to 18px converted to rem using the 'rem' function from the util module
+    display: inline-block; // Display as an inline-block element
+    line-height: 1; // Set line height to 1 for consistent vertical spacing
+    font-weight: 700; // Bold font weight
+    letter-spacing: 0.05em; // Add slight spacing between letters
+    text-transform: uppercase; // Make text uppercase
+    padding: u.rem(8) u.rem(10); // Padding: 10px top/bottom and 14px left/right, converted to rem
+    border-radius: u.rem(24); // Rounded corners with a 24px radius, converted to rem
+    transition-property: background-color, border, color; // Transition effects for background, border, and color
+    transition-duration: 200ms; // Duration of transition effects set to 200 milliseconds
+    transition-timing-function: ease-in-out; // Smooth transition with ease-in-out effect
+
+    // Styles for the primary button variant
+    &.primary {
+        background-color: var(--button-primary-bg); // Primary button background color
+        color: var(--text-light); // Primary button text color
+
+        // Hover state for the primary button
+        &:hover {
+            background-color: var(--button-primary-bg-hover); // Darker background color on hover
+            border: u.rem(2) solid var(--button-primary-bg-hover); // Match border color to hover background
+        }
+
+        &.white {
+            background-color: var(--button-primary-white-bg); // Primary button background color
+            border: u.rem(2) solid var(--button-primary-white-bg); // 2px solid border with primary background color
+    
+            &:hover {
+                background-color: var(--button-primary-white-bg-hover); // Darker background color on hover
+                border: u.rem(2) solid var(--button-primary-white-bg-hover); // Match border color to hover background
+            } 
+        }
+    }
+
+    // Styles for the secondary button variant
+    &.secondary {
+        background-color: var(--button-secondary-bg); // Secondary button background color
+        color: var(--text-light); // Secondary button text color
+        border: u.rem(2) solid var(--button-secondary-border); // 2px solid border with secondary border color
+    }
+
+        // Hover state for the secondary button
+        &:hover {
+            background-color: var(--text-dark);
+        }
+    }

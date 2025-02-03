@@ -21,10 +21,21 @@ body {
     color: var(--text-dark); // Sets text color using a CSS variable
 }
 
+main {
+    padding: 30px;
+}
+
+footer{
+    background-image: url(/images/homepage/SOIL.jpg);
+    background-size: cover;
+    padding: 20px;
+}
+
 img {
     display: block; // Ensures images don’t leave unexpected gaps
     height: auto; // Maintains aspect ratio
     width: 100%; // Makes images responsive
+    margin-bottom: 30px;
 }
 
 figure,

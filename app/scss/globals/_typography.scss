@@ -7,10 +7,9 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: u.rem(42); // Base font size of 42px converted to rem
     font-size: clamp(u.rem(42), 1.77rem + 3.64vw, u.rem(72)); // Responsive font size using clamp()
     line-height: 1; // Set line-height to 1 for tight vertical spacing
-    margin-block-end: u.rem(20); // Bottom margin of 20px converted to rem
+    margin-bottom: u.rem(48); // Bottom margin of 20px converted to rem
 
     // Responsive font sizes for h1 at different breakpoints (commented out)
     // @include u.breakpoint(medium){
@@ -23,22 +22,28 @@ h1 {
 }
 
 h2 {
-    font-size: u.rem(36); // Base font size of 36px converted to rem
-    font-size: clamp(u.rem(36), 1.91rem + 1.45vw, u.rem(48)); // Responsive font size using clamp()
+    font-size: clamp(u.rem(36), 1.91rem + 1.45vw, u.rem(40)); // Responsive font size using clamp()
     line-height: 1.1;
-    margin-block-end: u.rem(20);
+    margin-bottom: u.rem(48);
+    color: var(--sub-font);
 }
 
 h3 {
-    font-size: u.rem(24); // Set font size to 24px converted to rem
+    font-size: u.rem(32); // Set font size to 24px converted to rem
     line-height: 1;
+    color: var(--sub-font);
+}
+
+h4 {
+    margin: 0;
 }
 
 // Base styles for paragraphs
 p {
     margin-top: 0; // Remove top margin for consistency
     font-size: u.rem(18); // Base font size of 18px converted to rem
-    line-height: 1.3; // Set line-height to 1.3 for readability
+    line-height: u.rem(28); // Set line-height to 1.3 for readability
+    font-family: "Nunito Sans", serif;
 
     &.medium { // Medium-sized paragraph variation
         font-size: u.rem(20); // Base font size of 20px
@@ -49,6 +54,7 @@ p {
         font-size: u.rem(24); // Base font size of 24px
         font-size: clamp(u.rem(24), 1.39rem + 0.48vw, u.rem(28)); // Responsive font size using clamp()
         margin-block-end: u.rem(40); // Bottom margin of 40px converted to rem
+        line-height: u.rem(32);
     }
 }
 

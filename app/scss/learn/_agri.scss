@@ -1,0 +1,205 @@
+@use '../util/' as u;
+
+.agri {
+    margin-block-end: 48px;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__flex {
+        display: flex;
+        gap: u.rem(20);
+        position: relative; /* To position the circle and square inside */
+        flex-wrap: wrap;
+        
+        @include u.breakpoint(large) {
+            flex-wrap: nowrap;
+          }
+    }
+
+    &__image-wrapper {}
+
+    &__image {}
+
+    &__statement {
+        margin-bottom: 30px;
+    }
+
+    /* Circle shape in the top-left corner */
+    &__circle1 {
+        position: absolute;
+        top: 43%;
+        left: 31%;
+        width: 300px;
+        height: 300px;
+        background: var(--circle-bg);
+        border-radius: 50%;
+        z-index: -1; /* Behind images */
+    }
+    
+    &__circle2 {
+        position: absolute;
+        bottom: 38%;
+        right: -2%;
+        width: 300px;
+        height: 300px;
+        background: var(--circle-bg);
+        border-radius: 50%;
+        z-index: -1; /* Behind images */
+    }
+    
+    &__circle3 {
+        position: absolute;
+        top: -27%;
+        left: -2%;
+        width: 300px;
+        height: 300px;
+        background: var(--circle-bg);
+        border-radius: 50%;
+        z-index: -1; /* Behind images */
+    }
+    
+    /* Media query for smaller screens */
+    @media (max-width: 768px) {
+        &__circle1{
+            width: 150px; /* Reduce size */
+            height: 150px;
+            top: -8%;
+            left: -8%;
+        }
+        &__circle2 {
+            width: 150px; /* Reduce size */
+            height: 150px;
+            bottom: 23%;
+            right: -9%;
+        }
+    
+        &__circle3 {
+            display: none; /* Hide the third circle */
+        }
+    }
+    
+}
+
+.asia {
+    &__section {
+        margin-bottom: u.rem(40); /* Add spacing between sections */
+    }
+
+    &__title {
+        text-align: left; /* Center the title */
+        margin-bottom: u.rem(32); /* Add spacing below the title */
+    }
+
+    &__flex {
+        display: flex;
+        flex-direction: column; /* Stack content and image on smaller screens */
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__content {
+        flex: 1; /* Allow content to take up available space */
+        background-color: var(--flex-bg);
+        border-radius: 20px;
+        padding: 15px;
+    }
+
+    &__statement {
+        margin: 0;
+    }
+
+    &__image-wrapper {
+        flex: 1; /* Allow the image to take up available space */
+        display: flex;
+        justify-content: center;
+    }
+
+    &__image {
+        height: 280px;
+        object-fit: cover;
+    }
+
+    /* Media query for larger screens */
+    @media (min-width: 768px) {
+        &__flex {
+            flex-direction: row; /* Align content and image side by side */
+        }
+
+        &__content {
+            text-align: left; /* Ensure content remains left-aligned */
+        }
+
+    }
+}
+
+.cta {
+    &__wrapper {
+      position: relative; // Ensures proper positioning for child elements
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    &__subheadline-container {
+      box-sizing: border-box;
+      position: absolute;
+      top: 40%; // Centers vertically on smaller screens
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      padding: u.rem(5);
+      width: u.rem(250); // Fixed width for smaller screens
+      border-radius: u.rem(20);
+      text-align: center;
+  
+      @include u.breakpoint(medium) {
+        width: u.rem(450);
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+  
+      @include u.breakpoint(large) {
+        width: u.rem(600);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: u.rem(20);
+      }
+    }
+  
+    &__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      background-color: hsl(120deg 32% 85% / 56%); // Semi-transparent background for better readability
+      padding: u.rem(15);
+      border-radius: 10px;
+  
+      @media (min-width: 768px) {
+        position: absolute; // Makes it overlap the image
+        top: 50%; // Centers vertically
+        left: 50%;
+        transform: translate(-50%, -50%); // Ensures true centering
+        max-width: 200ch;
+      }
+    }
+  
+    &__subheadline {
+      margin-bottom: 30px;
+      color: #6c6060;
+    }
+  
+    &__title {
+      margin-bottom: 20px;
+      font-weight: unset;
+    }
+  
+    &__statement {
+        margin-block-end: 20px;
+    }
+  }
+  

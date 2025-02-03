@@ -1,0 +1,108 @@
+@use '../util/' as u; // Import the utility functions module with the alias 'u'
+
+.hero {
+
+  &__wrapper { // Wrapper for the hero content (image and text)
+    padding: 0;
+    position: relative;
+    border-bottom: 4px solid black;
+  }
+
+  &__video {
+    display: block; // Ensure the video is displayed as a block element
+    padding-block: 0px;
+    width: 100%;
+    height: auto;
+
+    @include u.breakpoint(large) { 
+      margin: 0 auto;    // Center the video
+    }
+  }
+
+  &__theme {
+    box-sizing: border-box;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); // Fine-tune centering
+    z-index: 1; // Ensure this is above the video
+    padding: 20px 20px 20px 0px; // Add extra padding at the bottom for the button
+    background-color:var(--hero-bg);
+    width: u.rem(300);
+    height: auto; // Adjust height dynamically
+    border-radius: u.rem(20);
+
+    @include u.breakpoint(large) { 
+      width: u.rem(640);
+     }
+  }
+
+  &__headline-container {
+    height: u.rem(75);
+
+    @include u.breakpoint(large) { 
+     height: u.rem(190);
+    }
+  }
+
+  &__headline {
+    font-size: u.rem(12);
+    font-weight: 600;
+    line-height: u.rem(20);
+    animation-duration: 30s;
+    top: 10%;
+    left: 10%;
+    opacity: 0;
+    position: absolute; // Change position to avoid overlapping
+    animation: fadeCycle 30s infinite;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-align: center;
+
+    @include u.breakpoint(large) { 
+      font-size: u.rem(28);
+      line-height: u.rem(40);
+     }
+
+  }
+
+  .headline_corn {
+    animation-delay: 0s;
+  }
+
+  .headline_palm {
+    animation-delay: 10s;
+  }
+
+  .headline_banana {
+    animation-delay: 20s;
+  }
+
+  &__button {
+     // Center the button inside the headline container
+     position: absolute;
+     bottom: 5%;
+     left: 50%;
+     transform: translateX(-50%);
+     padding: u.rem(5) u.rem(10);
+     border: none;
+     background-color: var(--button-primary-bg);
+ 
+     @include u.breakpoint(large) {
+       font-size: u.rem(20);
+       padding: u.rem(10) u.rem(20);
+     }
+  }
+}
+
+/* Keyframes for fadeCycle animation */
+@keyframes fadeCycle {
+  0%,
+  30% {
+    opacity: 1; /* Fully visible */
+  }
+  33.33%,
+  100% {
+    opacity: 0; /* Hidden */
+  }
+}

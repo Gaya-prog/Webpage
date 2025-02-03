@@ -1,0 +1,112 @@
+@use '../util/' as u;
+
+.history{
+
+    @include u.breakpoint(large) {
+      }
+
+&__theme{
+}
+
+&__main{
+}
+
+&__main-image{
+    border-radius: u.rem(20);
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-bottom: u.rem(32);
+    @include u.breakpoint(large) {
+        }
+}
+
+&__image{
+  border-radius: u.rem(20);
+  object-fit: cover;
+  height: 220px;
+  width: 330px;
+  
+  @include u.breakpoint(large) {
+  height: 400px;
+  width: 500px;
+  }
+}
+
+&__title, &__subheadline{
+    text-align: center;
+    margin-bottom: 1.5rem;
+    background-color: var(--flex-head-bg);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+&__headline-container {
+    box-sizing: border-box;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 5px;
+    background-color: hsl(60deg 29% 64% / 46%);
+    width: 150px;
+    border-radius: 20px;
+    text-align: center;
+    width: 300px;
+
+    @include u.breakpoint(medium){
+      width: 450px;
+      top: 60%;
+      left: 40%;
+    }
+
+    @include u.breakpoint(large) {
+      width: 600px;
+      top: 100%;
+      left: 30%; 
+      padding: 20px;  
+    }
+  }
+
+&__headline {
+  margin: 0;
+  font-size: u.rem(32) ;
+  display: flex;
+  align-items: center;
+
+    @include u.breakpoint(large) {
+      font-size: u.rem(52);
+    }
+  }
+
+
+&__icon {
+    width: 82px; /* Adjust the size of the icon */
+    height: 66px; /* Adjust the size of the icon */
+}
+
+&__subheadline-container{
+}
+
+
+&__content{
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+
+  @include u.breakpoint(large) {
+    flex-wrap: nowrap;
+  }
+
+}
+
+&__statement {
+    text-align: justify;
+    margin-block-end: 40px;
+    padding-bottom: 30px;
+    border-bottom: solid black 4px;
+}
+}
+

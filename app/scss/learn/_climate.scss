@@ -1,0 +1,119 @@
+@use '../util/' as u;
+
+.climate {
+  &__wrapper {}
+
+  &__image-wrapper {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__theme {}
+
+  &__headline-container {
+    box-sizing: border-box;
+    position: absolute;
+    top: 40%; // Converts 40px to rem
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: u.rem(5);
+    width: 250px;
+    border-radius: u.rem(20);
+    text-align: center;
+
+    @include u.breakpoint(medium) {
+      width: 450px;
+      top: 90%;
+      left: 60%;
+    }
+
+    @include u.breakpoint(large) {
+      width: 985px;
+      top: 100%;
+      left: 50%;
+      padding: u.rem(20);
+    }
+  }
+
+  &__headline {
+  }
+
+  &__flex {
+    
+
+    @include u.breakpoint(large) {
+        display: flex;
+        gap: u.rem(15); // Gap between flex items
+        margin-block-end: u.rem(30); // Bottom margin
+        flex-wrap: nowrap;
+    }
+  }
+
+  &__flex-item {
+    flex: 1 1 calc(33.33% - u.rem(16)); // Equal width for items
+    padding: u.rem(15); // Padding inside the box
+    margin: u.rem(8); // Margin between items
+    background-color: var(--flex-bg);
+    box-shadow: 0 u.rem(4) u.rem(6) rgba(0, 0, 0, 0.1); // Adds shadow
+    border-radius: u.rem(8); // Rounds corners
+    text-align: center;
+    position: relative; // Needed for content positioning
+    overflow: hidden; // Hides overflowing content
+    height: u.rem(100); // Initial height of the flex item
+    transition: all 0.3s ease; // Smooth animation for hover effects
+
+    &:hover {
+      background-color: var(--flex-bg); // Hover background color
+      height: u.rem(200); // Expands height to show full content
+    }
+  }
+
+  &__content {
+    position: absolute;
+    inset: 0; // Covers the entire item
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: u.rem(15); // Padding for the content
+    transition: opacity 0.3s ease, transform 0.3s ease; // Smooth transition
+
+    // Default state: Show the title only
+    opacity: 1;
+    transform: none;
+
+    // On hover: Show the entire content
+    .climate__flex-item:hover & {
+      transform: translateY(0); // Moves content into view
+    }
+  }
+
+  &__title {
+    font-size: u.rem(20); // Font size for the title
+    font-weight: bold;
+    margin-bottom: u.rem(8); // Space below the title
+    opacity: 1; // Title always visible
+    margin-bottom: 20px;
+  }
+
+  &__statement {
+    list-style: disc;
+    margin: 0;
+    padding-left: u.rem(16); // Indentation for list items
+    font-size: u.rem(14); // Font size for statements
+
+    // Default state: Hidden
+    display: none;
+
+    // On hover: Show statements
+    .climate__flex-item:hover & {
+      display: block;
+    }
+  }
+}

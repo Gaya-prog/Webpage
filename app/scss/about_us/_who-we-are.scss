@@ -1,0 +1,60 @@
+@use '../util/' as u;
+
+.who-we-are {
+  position: relative;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: u.rem(32);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: u.rem(40);
+
+    @include u.breakpoint(large) {
+      flex-direction: row-reverse;
+      text-align: left;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: u.rem(10);
+    object-fit: cover;
+    margin-bottom: u.rem(16);
+
+    @include u.breakpoint(large) {
+      width: 50%;
+      margin-bottom: u.rem(20);
+      height: 250px;
+    }
+  }
+
+  &__theme {
+
+    h2,
+    h3,
+    p {
+
+      @include u.breakpoint(large) {
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    
+
+    @include u.breakpoint(large) {
+    }
+  }
+
+  &__statement {
+    text-align: justify;
+
+    @include u.breakpoint(large) {
+    }
+  }
+}

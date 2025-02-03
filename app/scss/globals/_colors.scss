@@ -2,25 +2,29 @@
     /* Define global color variables to ensure consistent color use throughout the site */
     
     --main-bg: hsl(0, 0%, 100%); /* White background color for main areas */
-    --text-dark: hsl(233, 14%, 25%); /* Dark text color */
+    --text-dark: hsl(0, 0%, 0%); /* Dark text color */
     --text-light: hsl(0, 0%, 100%); /* Light text color, typically for dark backgrounds */
-    --text-link-hover: hsl(320, 85%, 41%);
-    --hero-bg: hsl(232, 58%, 55%); /* Background color for hero section */
-    --header-bg:hsl(143, 68%, 22%); /* Background color for header, matches hero */
+    --flex-head-bg: hsl(60, 29%, 64%);
+    --flex-bg: hsl(120, 32%, 85%);
+    --table-bg: hsl(120, 32%, 85%);
+    --circle-bg: linear-gradient(135deg, #acac91, #b8e1a9);
+    --circle-bg-alt: hsla(60, 18%, 69%, 0.874);
+    --event-bg: hsl(120, 64%, 19%); 
+    --hero-bg: hsl(0deg 100% 17% / 72%); /* Background color for hero section */
+    --header-bg:hsl(0, 100%, 17%); /* Background color for header, matches hero */
+    --sub-font: hsl(0, 0%, 29%);
     
     /* Primary button styling variables */
-    --button-primary-bg: hsl(180, 100%, 42%); /* Primary button background color */
-    --button-primary-bg-hover: hsl(180, 100%, 37%); /* Darker color for primary button on hover */
-    --button-primary-white-bg: hsl(0, 0%, 100%); /* Primary button background color */
+    --button-primary-bg: hsl(0, 100%, 17%); /* Primary button background color */
+    --button-primary-bg-hover: hsl(0, 46%, 43%); /* Darker color for primary button on hover */
+    --button-primary-border: hsl(60, 29%, 64%); /* Primary button background color */
     --button-primary-white-bg-hover: hsl(0, 0%, 100%); /* Darker color for primary button on hover */
-    --button-primary-text: hsl(233, 14%, 25%); /* Dark text color for primary buttons */
    
     /* Secondary button styling variables */
     --button-secondary-bg: transparent; /* Transparent background for secondary button */
-    --button-secondary-bg-hover: hsl(0, 0%, 100%); /* White background on hover for secondary button */
+    --button-secondary-bg-hover: var(--text-dark); /* White background on hover for secondary button */
     --button-secondary-border: hsl(0, 0%, 100%); /* White border for secondary button */
-    --button-secondary-text: hsl(0, 0%, 100%); /* White text color for secondary button */
-    --button-secondary-text-hover: var(--hero-bg); /* Text color on hover for secondary button, matches hero background */
+    --button-secondary-text-hover: var(--text-maroon); /* Text color on hover for secondary button, matches hero background */
     --fullwidth-bg: hsl(320, 85%, 41%); /* Background color for full-width sections */
     --gradient1: hsl(250, 14%, 25%);
     --gradient2: hsl(232, 58%, 55%);
