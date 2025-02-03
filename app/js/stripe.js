@@ -1,4 +1,4 @@
-const stripe = Stripe("pk_test_51QkbVR07FUuvaDAkEVWEHpmsvZgCBISWPaEM6b1bPNvOBZlSmdhXWteoqBYmK11nHNMbPTaJoZhOK4fxySA3hgam000M7WVe2Z"); // Your Stripe Publishable Key
+Stripe("pk_test_51QkbVR07FUuvaDAkEVWEHpmsvZgCBISWPaEM6b1bPNvOBZlSmdhXWteoqBYmK11nHNMbPTaJoZhOK4fxySA3hgam000M7WVe2Z"); // Your Stripe Publishable Key
 const elements = stripe.elements();
 
 // Create a card element
@@ -24,7 +24,7 @@ form.addEventListener("submit", async (event) => {
     const response = await fetch("http://localhost:3000/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: amountInput.value * 100, currency: "usd" }), // Convert dollars to cents // Sending amount and currency
+      body: JSON.stringify({ amount: 5000, currency: "usd" }), // Sending amount and currency
     });
 
     const { clientSecret } = await response.json(); // Get clientSecret from the backend response

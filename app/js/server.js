@@ -1,23 +1,20 @@
 const express = require("express");
 const Stripe = require("stripe");
 const bodyParser = require("body-parser");
+const cors = require('cors');  // Import CORS
 
-require("dotenv").config(); // Load environment variables
+const app = express(); 
+const stripe = Stripe("sk_test_51QkbVR07FUuvaDAkdo3VeGBm6wnPZ7fZn9Tm8bE5xZHmvdbJmxvAeywBR89Xpw6IvjAIlSxAc78t4K0pEg10HZFk00nV8eRryC"); // Replace with your Secret Key
 
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY); // Use the key from .env
-
-
+app.use(cors());  // Use CORS middleware to enable cross-origin requests
 app.use(bodyParser.json());
-
-const cors = require("cors");
-app.use(cors());
 
 app.post("/create-payment-intent", async (req, res) => {
   const { amount, currency } = req.body;
 
   try {
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: amount, // Amount in cents
+      amount: amount,  // Amount in cents
       currency: currency,
     });
 

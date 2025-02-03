@@ -21,6 +21,7 @@
     
     <!-- External JavaScript file -->
     <script src="/app/js/script.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 
 <body>
@@ -111,95 +112,93 @@
         </div>
     </header>
 
+<body>
     <div class="donate__container">
-        <div class="donate__image">
-          <img
-            src="/images/donate.jpg"
-            alt="Climate Change Mitigation"
-            class="donate__donation-image"
-          />
-        </div>
-        <div class="donate__description"> 
-          <h2>
-            🌍 Support Climate Change Mitigation through Lamatu, the Controlled-release Technology 🌱
-          </h2>
-          <p>
-            We invite you to join us in the fight against climate change by supporting Nanofertech's innovative CRT, non-polymer coating material embedded with AI navigation. Your donation will directly fund research and development, as well as support subsistence farming for underserved farmers in Malaysia.
-          </p>
-          <p>
-            By contributing, you’re helping us reduce the harmful emissions of greenhouse gases hailing particularly from nitrogen fertilizers, which are also a major source of GHGs in agriculture. CRT is built on the principle of circular economy and hence, plays a critical role in counteracting environmental hazards by transforming waste into valuable resources, creating a sustainable solution for the environment and farmers alike.
-          </p>
-          <p>
-            Together, we can make a meaningful impact on both the climate and the livelihoods of vulnerable communities. Every donation counts!
-          </p>
-          <p><strong>Donate now and be part of the change. 🌱🌎</strong></p>
-    
-          <!-- Donation Amount Input -->
-          <label for="amount">Donation Amount (USD)</label>
-          <input type="number" id="amount" name="amount" min="1" placeholder="Enter your amount" required />
-    
-          <!-- Donate Button -->
-          <button id="donate-button" class="button primary donate__button">Donate</button>
-    
-          <!-- Payment Form -->
-          <form id="payment-form" style="display: none; margin-top: 1rem;">
-            <div id="card-container" style="border: 1px solid #ccc; padding: 1rem; border-radius: 8px;">
-              <h4>Enter your card details:</h4>
-              <div id="card-element" style="margin-bottom: 1rem;"></div>
-              <div id="card-errors" role="alert" style="color: red;"></div>
+        <div class="donate__description">
+          <div class="donate__container">
+            <div class="donate__image">
+              <img
+                src="/images/donate.jpg"
+                alt="Climate Change Mitigation"
+                class="donate__donation-image"
+              />
             </div>
-            <button type="submit" class="button primary" style="margin-top: 1rem;">Confirm Donation</button>
-          </form>
-        </div>
-      </div>
-    
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const donateButton = document.getElementById("donate-button");
-        const paymentForm = document.getElementById("payment-form");
-        const amountInput = document.getElementById("amount");
+            <div class="donate__description"> 
+              <h2>
+                🌍 Support Climate Change Mitigation through Lamatu, the Controlled-release Technology 🌱
+              </h2>
+              <p>
+                We invite you to join us in the fight against climate change by supporting Nanofertech's innovative CRT, non-polymer coating material embedded with AI navigation. Your donation will directly fund research and development, as well as support subsistence farming for underserved farmers in Malaysia.
+              </p>
+              <p>
+                By contributing, you’re helping us reduce the harmful emissions of greenhouse gases hailing particularly from nitrogen fertilizers, which are also a major source of GHGs in agriculture. CRT is built on the principle of circular economy and hence, plays a critical role in counteracting environmental hazards by transforming waste into valuable resources, creating a sustainable solution for the environment and farmers alike.
+              </p>
+              <p>
+                Together, we can make a meaningful impact on both the climate and the livelihoods of vulnerable communities. Every donation counts!
+              </p>
+              <p><strong>Donate now and be part of the change. 🌱🌎</strong></p>
+            <label for="amount">Donation Amount (MYR)</label>
+            <input type="number" id="amount" name="amount" min="1" placeholder="Enter your amount" required /> <br>
+            <button id="donate-button" class="button primary donate__button">Donate</button>
 
-        // Show the payment form directly when "Donate" is clicked
-        donateButton.addEventListener("click", () => {
-          donateButton.style.display = "none";
-          paymentForm.style.display = "block";
-        });
-    
-        // Stripe setup
-        const stripe = Stripe("pk_test_51QkbVR07FUuvaDAkEVWEHpmsvZgCBISWPaEM6b1bPNvOBZlSmdhXWteoqBYmK11nHNMbPTaJoZhOK4fxySA3hgam000M7WVe2Z");
+            <form id="payment-form" style="display: none;">
+                <div id="card-container">
+                    <h4>Enter your card details:</h4>
+                    <div id="card-element"></div>
+                    <div id="card-errors" role="alert"></div>
+                </div>
+                <button type="submit" class="button primary donate__button">Confirm Donation</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const stripe = Stripe('pk_test_51QkbVR07FUuvaDAkEVWEHpmsvZgCBISWPaEM6b1bPNvOBZlSmdhXWteoqBYmK11nHNMbPTaJoZhOK4fxySA3hgam000M7WVe2Z');
         const elements = stripe.elements();
-        const cardElement = elements.create("card");
-        cardElement.mount("#card-element");
-    
-        paymentForm.addEventListener("submit", async (event) => {
-          event.preventDefault();
-    
-          const { error, paymentMethod } = await stripe.createPaymentMethod({
-            type: "card",
-            card: cardElement,
-          });
-    
-          if (error) {
-            document.getElementById("card-errors").textContent = error.message;
-          } else {
-            fetch("/create-payment-intent", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                paymentMethodId: paymentMethod.id,
-                amount: amountInput.value, // Send donation amount
-              }),
-            })
-              .then((response) => response.json())
-              .then((data) => {
-                if (data.error) {
-                  document.getElementById("card-errors").textContent = data.error;
+        const card = elements.create('card');
+        card.mount('#card-element');
+        
+        const donateButton = document.getElementById('donate-button');
+        const paymentForm = document.getElementById('payment-form');
+        
+        donateButton.addEventListener('click', async () => {
+            const amount = document.getElementById('amount').value;
+            if (!amount || amount <= 0) {
+                alert("Please enter a valid donation amount.");
+                return;
+            }
+
+            const response = await fetch('http://localhost:3000/create-payment-intent', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ amount: amount * 100, currency: 'myr' })
+            });
+            const { clientSecret } = await response.json();
+
+            paymentForm.style.display = 'block';  // Show payment form after getting clientSecret
+
+            paymentForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                const { paymentMethod, error } = await stripe.createPaymentMethod({
+                    type: 'card',
+                    card: card,
+                });
+
+                if (error) {
+                    document.getElementById('card-errors').textContent = error.message;
                 } else {
-                  alert("Donation successful! Thank you for your support.");
+                    const confirmResponse = await stripe.confirmCardPayment(clientSecret, {
+                        payment_method: paymentMethod.id,
+                    });
+
+                    if (confirmResponse.error) {
+                        document.getElementById('card-errors').textContent = confirmResponse.error.message;
+                    } else {
+                        alert('Payment successful!');
+                    }
                 }
-              });
-          }
+            });
         });
-      </script>
-    </body>
+    </script>
+</body>
 </html>

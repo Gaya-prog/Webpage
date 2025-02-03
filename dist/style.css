@@ -2072,6 +2072,7 @@ a, a:visited, a:active {
 }
 .donate__button {
   font-size: 3rem;
+  margin-top: 0.9375rem;
 }
 .donate form {
   margin-top: 20px;
