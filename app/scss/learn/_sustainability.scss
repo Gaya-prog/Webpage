@@ -5,9 +5,9 @@
     &__subheadline{
       margin-bottom: 30px;
       text-align: center;
-      background-color: var(--flex-head-bg);
         border-radius: 20px;
         padding: 10px;
+        color: var(--text-green);
     }
     
     &__wrapper {
@@ -60,6 +60,7 @@
 }
 
 .network{
+margin-bottom: 20px;
 
     &__headline{
         text-align: center;

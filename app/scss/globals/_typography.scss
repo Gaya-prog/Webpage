@@ -7,7 +7,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: clamp(u.rem(42), 1.77rem + 3.64vw, u.rem(72)); // Responsive font size using clamp()
+    font-size: clamp(u.rem(42), 1.77rem + 3.64vw, u.rem(50)); // Responsive font size using clamp()
     line-height: 1; // Set line-height to 1 for tight vertical spacing
     margin-bottom: u.rem(48); // Bottom margin of 20px converted to rem
 
@@ -41,18 +41,17 @@ h4 {
 // Base styles for paragraphs
 p {
     margin-top: 0; // Remove top margin for consistency
-    font-size: u.rem(18); // Base font size of 18px converted to rem
+    font-size: u.rem(22); // Base font size of 18px converted to rem
     line-height: u.rem(28); // Set line-height to 1.3 for readability
     font-family: "Nunito Sans", serif;
 
     &.medium { // Medium-sized paragraph variation
         font-size: u.rem(20); // Base font size of 20px
-        font-size: clamp(u.rem(20), 1.136rem + 0.48vw, u.rem(24)); // Responsive font size using clamp()
+        font-size: clamp(u.rem(18), 1.136rem + 0.48vw, u.rem(20)); // Responsive font size using clamp()
     }
 
     &.large { // Large-sized paragraph variation
-        font-size: u.rem(24); // Base font size of 24px
-        font-size: clamp(u.rem(24), 1.39rem + 0.48vw, u.rem(28)); // Responsive font size using clamp()
+        font-size: clamp(u.rem(20), 1.39rem + 0.48vw, u.rem(22)); // Responsive font size using clamp()
         margin-block-end: u.rem(40); // Bottom margin of 40px converted to rem
         line-height: u.rem(32);
     }

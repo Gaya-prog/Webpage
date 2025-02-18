@@ -1,14 +1,112 @@
 @use '../util/' as u;
 
 .our-work {
+
+  &__container{}
+
   &__main-title {
     text-align: center;
     margin-bottom: 10px;
+    color: var(--text-green);
+  }
+
+  &__image-container{
+    display: flex;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+
+    @include u.breakpoint(large) {
+      flex-wrap: nowrap;
+      }
+  }
+
+  &__image{
+    margin: 0 auto;
+    height: 380px;
+    width: 460px;
+  }
+
+  &__description{
+    text-align: center;
   }
 
   &__main-subtitle {
     text-align: center;
     margin-bottom: 30px;
+  }
+
+  &__image-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: u.rem(15);
+    margin-bottom: u.rem(30);
+  }
+
+  &__image-wrapper {
+    position: relative;
+    width: 92%; // Ensures 3 images per row
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+
+    @include u.breakpoint(large) {
+      width: 32%;
+      height: 350px;
+    }
+  }
+
+  &__image-wrapper:hover .our-work__image {
+    transform: scale(1.05); // Slight zoom on hover
+  }
+  
+  &__flex-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ensures the image fills the box
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__image-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); // Center the text
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); // Dark overlay
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+  }
+
+  &__image-wrapper:hover .our-work__image-label {
+    opacity: 1;
+  }
+
+  &__title {
+    font-size: u.rem(20); // Font size for the title
+    font-weight: bold;
+    margin-bottom: u.rem(8); // Space below the title
+    opacity: 1; // Title always visible
+    margin-bottom: 20px;
+  }
+
+  &__statement {
+    list-style: disc;
+    margin: 0;
+    padding-left: u.rem(16); // Indentation for list items
+    font-size: u.rem(14); // Font size for statements
+
+    // Default state: Hidden
+    display: none;
+
   }
 }
 
@@ -18,9 +116,10 @@
 
   &__title {
     text-align: center;
-    background-color: var(--flex-head-bg);
     border-radius: 20px;
     padding: 10px;
+    margin-block-end: 24px;
+    color: var(--text-maroon);
   }
 
   &__content {
@@ -60,169 +159,161 @@
 }
 
 /* Section: LAMATu Table */
-.lamatu-table {
+.solution {
   margin: 40px 0; 
+
+  &__wrapper{
+    display: flex;
+      justify-content: space-between;
+      gap: u.rem(32);
+      padding-block-end: 30px;
+      flex-wrap: wrap;
+
+      @include u.breakpoint(large) {
+        flex-wrap: nowrap;
+      }
+  }
+
+  &__image-wrapper{}
+
+  &__image{
+    width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+          
+      @include u.breakpoint(large) {
+        height: 351px;
+        width: 356px;
+      }
+  }
 
   &__title {
     text-align: center;
-    background-color: var(--flex-head-bg);
-    border-radius: 20px;
-    padding: 10px;
+      border-radius: 20px;
+      padding: 10px;
+      margin-block-end: 24px;
+      color: var(--text-green);
   }
 
-  &-container {
-  width: 100%;
-  border-collapse: collapse;
-  padding: 0 u.rem(311);
-  font-size: u.rem(10);
-
-  @include u.breakpoint(large) {
-    font-size: u.rem(16);
-  }
-
-  th, td {
-    padding: u.rem(8);
-    text-align: left;
-  }
-
-  th {
-    background-color: var(--table-bg);
-    font-weight: bold;
-    text-align: center;
-  }
-
-  tr:nth-child(even) td {
-    background-color: var(--table-bg);
-  }
-
-  tr:hover {
-    background-color: var(--table-hover-bg, #e9e9e9);
-  }
+  &__description{
+    text-align: justify;
   }
 }
 
 /* Section: Why Switch CRT */
-.why-switch-crt {
+.benefits {
   margin: 40px 0;
 
   &__title {
     text-align: center;
-    background-color: var(--flex-head-bg);
     border-radius: 20px;
     padding: 10px;
+    margin-block-end: 24px;
+    color: var(--text-maroon);
   }
 
-  &__content {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+  &__grid {
+    display: grid;   
+    grid-gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @include u.breakpoint(large) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__grid-item {
     position: relative;
-    display: inline-block;
-    text-align: center;
+    width: 92%; // Ensures 3 images per row
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+
+    @include u.breakpoint(large) {
+      height: 420px;
+    }
   }
 
-
-  .circle-background {
-    position: absolute;
-    border-radius: 50%;
-    background-color: var(--circle-bg-alt); /* Set your desired circle color */
-    z-index: -1; /* Places circles behind the content */
-}
-
-.circle1 {
-    width: 230px;
-    height: 230px;
-    top: -4%;
-    left: 12%;
-}
-
-.circle2 {
-    width: 150px;
-    height: 150px;
-    top: 47%;
-    left: 84%;
-    transform: translate(-50%, -50%);
-}
-
-.circle3 {
-    width: 100px;
-    height: 100px;
-    bottom: 0%;
-    right: 21%;
-}
+  &__grid-item:hover .benefits__image {
+    transform: scale(1.05); // Slight zoom on hover
+  }
 
   &__image {
-    @extend .what-is-crt__image; // Reuse the responsive image styling
-  }
-
-  &__description {
-    list-style-type: disc;
-    padding-left: 20px;
-  }
-}
-
-/* Section: Why LAMATu */
-.why-lamatu {
-  margin: 40px 0;
-
-  &__container {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  &__title {
-    background-color: var(--flex-head-bg);
-    border-radius: 20px;
-    padding: 10px;
-  }
-
-  &__description {
-    margin-bottom: 20px;
-  }
-
-  &__comparison-table {
     width: 100%;
-    border-collapse: collapse;
-    margin: u.rem(20) 0;
-    font-size: u.rem(10);
-  
-    @include u.breakpoint(large) {
-      font-size: u.rem(16);
-    }
-  
-    th, td {
-      padding: u.rem(8);
-      text-align: left;
-    }
-  
-    th {
-      background-color: var(--table-bg);
-      font-weight: bold;
-      text-align: center;
-    }
-  
-    tr:nth-child(even) td {
-      background-color: var(--table-bg);
-    }
-  
-    tr:hover {
-      background-color: var(--table-hover-bg, #e9e9e9);
-    }
+    height: 100%;
+    object-fit: cover; // Ensures the image fills the box
+    transition: transform 0.3s ease-in-out;
+    border-radius: 20px;
+  }
+
+  // Fixed hover selector
+  &__grid-item:hover .benefits__text-overlay {
+    opacity: 1;
+  }
+
+  &__text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); // Center the text
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); // Dark overlay
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0; // Start hidden but still present in the DOM
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
   }
 }
 
-/* Section: Environmental Pledge */
-.environmental-pledge {
+
+
+.new-era {
   margin: 40px 0;
   text-align: center;
 
-  &__title {
-    background-color: var(--flex-head-bg);
-    border-radius: 20px;
-    padding: 10px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: u.rem(30);
+    margin-bottom: u.rem(40);
+    flex-wrap: wrap;
+
+    @include u.breakpoint(large) {
+      flex-wrap: nowrap;
+    }
   }
 
-  &__content {
-    line-height: 1.6;
+  &__image {
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+    @include u.breakpoint(large) {
+      height: 400px;
+      width: 40%;
+    }
+  }
+
+  &__theme {
+    align-content: center;
+    max-width: 90ch;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: u.rem(10);
+    color: var(--text-green);
+  }
+
+  &__statement {
+    text-align: justify;
   }
 }

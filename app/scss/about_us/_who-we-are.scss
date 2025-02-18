@@ -45,9 +45,11 @@
 
   &__title {
     text-align: center;
+    color: var(--text-green);
     
 
     @include u.breakpoint(large) {
+      font-size: u.rem(50);
     }
   }
 

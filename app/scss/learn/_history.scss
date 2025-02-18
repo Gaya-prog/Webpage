@@ -43,16 +43,17 @@
 &__headline-container {
     box-sizing: border-box;
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
     padding: 5px;
-    background-color: hsl(60deg 29% 64% / 46%);
+    background-color: hsl(60deg 29% 64% / 43%);
     width: 150px;
     border-radius: 20px;
     text-align: center;
     width: 300px;
+    text-align: center;
 
     @include u.breakpoint(medium){
       width: 450px;
@@ -61,21 +62,22 @@
     }
 
     @include u.breakpoint(large) {
-      width: 600px;
-      top: 100%;
-      left: 30%; 
+      width: 1200px;
+      top: 84%;
+      left: 50%; 
       padding: 20px;  
     }
   }
 
 &__headline {
   margin: 0;
-  font-size: u.rem(32) ;
   display: flex;
   align-items: center;
+  color: var(--text-green);
+  text-align: center;
 
     @include u.breakpoint(large) {
-      font-size: u.rem(52);
+      font-size: 56px;
     }
   }
 
@@ -106,7 +108,6 @@
     text-align: justify;
     margin-block-end: 40px;
     padding-bottom: 30px;
-    border-bottom: solid black 4px;
 }
 }
 

@@ -5,6 +5,10 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1.5rem;
     
+    &__title{
+        color: var(--sub-font);
+    }
+
     &__item {
         background-color: var(--flex-bg);
         border-radius: 8px;
@@ -26,6 +30,7 @@
     }
     
     &__time {
+        font-size: u.rem(20);
     }
     
     &__item p {
@@ -46,7 +51,7 @@
 &__content {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 12px;
     align-items: flex-start;
 
     @include u.breakpoint(large){
@@ -60,15 +65,16 @@
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 
     @include u.breakpoint(large){
-        width: 600px;
+        width: 499px;
+        height: 455px;
     }
 }
 
 /* Adjust text alignment and spacing */
 &__content div {
-    flex: 1;
     line-height: 1.6;
     color: #333;
 }

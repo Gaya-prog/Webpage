@@ -1,0 +1,40 @@
+@use '../util/' as u;
+
+.disclaimer{
+
+    &__title{
+        text-align: center;
+        font-size: u.rem(50);
+        background-image: url(/images/disclaimer1.jpg);
+        padding: 20px;
+        color: var(--text-light);
+    }
+
+    &__section{}
+    
+    &__container{
+        margin-bottom: 40px;
+    }
+
+    &__heading{
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    &__container:nth-child(odd) .disclaimer__heading {
+        color: var(--text-green);
+    }
+    
+    &__container:nth-child(even) .disclaimer__heading {
+        color: var(--text-maroon);
+    }    
+
+    &__content{
+        text-align: justify;
+    }
+
+    &__footer{ 
+        background-image: url(/images/disclaimer1.jpg);
+        padding: 40px;
+    }
+}

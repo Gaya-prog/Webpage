@@ -4,6 +4,8 @@
     --main-bg: hsl(0, 0%, 100%); /* White background color for main areas */
     --text-dark: hsl(0, 0%, 0%); /* Dark text color */
     --text-light: hsl(0, 0%, 100%); /* Light text color, typically for dark backgrounds */
+    --text-green: hsl(120, 64%, 19%);
+    --text-maroon: hsl(0, 100%, 17%);
     --flex-head-bg: hsl(60, 29%, 64%);
     --flex-bg: hsl(120, 32%, 85%);
     --table-bg: hsl(120, 32%, 85%);
@@ -38,4 +40,14 @@
    .green { 
        background-color: hsl(120, 95%, 17%); /* Dark green background color */
    }
+
+   .highlight-green {
+    color: var(--text-green);
+    font-weight: bold;
+}
+
+    .highlight-maroon {
+    color: var(--text-maroon);
+    font-weight: bold;
+}
    

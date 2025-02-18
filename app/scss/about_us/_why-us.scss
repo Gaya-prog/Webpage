@@ -26,8 +26,8 @@
     object-fit: cover;
 
     @include u.breakpoint(large) {
-      width: 45%;
-      height: 650px;
+      width: 25%;
+      height: 540px;
     }
   }
 
@@ -37,9 +37,11 @@
 
   &__title {
     text-align: center;
+    color: var(--text-green);
     
 
     @include u.breakpoint(large) {
+      font-size: u.rem(50);
     }
   }
 

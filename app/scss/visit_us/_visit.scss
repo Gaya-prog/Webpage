@@ -1,10 +1,16 @@
 @use '../util/' as u;
 
+.contact-flex{
+  display: flex;
+  gap: 30px;
+}
+
 .visit-us__flex {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: space-between;
+  max-width: 700px;
 
   @include u.breakpoint(medium) {
     flex-wrap: nowrap;
@@ -21,42 +27,69 @@
   flex-direction: column;
   gap: 1rem;
 
-  &__title {
-  }
+  &__image {
+    height: 300px;
+    width: auto;
+    border-radius: 20px;
 
-  iframe {
-    margin-top: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    @include u.breakpoint(large) {
+      height: 670px;
+      width: 650px;
+    }
   }
 }
 
 .contact-info {
   background-color: var(--flex-bg);
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex: 1 1 45%;
   display: flex;
+  border-radius: 20px;
   flex-direction: column;
-  gap: 1rem;
+  margin: 0 auto;
+  max-width: u.rem(800);
+  text-align: center;
+  justify-content: center;
+
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  
+    @include u.breakpoint(medium) {
+      flex-wrap: nowrap;
+    }
+  }
 
   &__title {
+    font-size: u.rem(40);
+    margin: 0;
   }
 
-  &__email {
-    display: flex;
-    gap: 10px;
-  }
 
   &__socials {
-    display: flex;
     gap: 10px;
+    font-size: u.rem(32);
+    text-align: center;
   }
 
   &__icon{
-    height: 30px;
-    width: 30px;
+    height: 100px;
+    width: 100px;
+    display: inline-flex; /* Makes each icon appear below the title */
+    margin: 15px auto; /* Centers the icons */
+  }
+
+  &__box{
+    text-align: center;
+  }
+
+  &__subtitle{
+    font-size: u.rem(40);
+  }
+
+  &__button{
+    font-size: u.rem(32);
   }
 
   ul {
@@ -76,5 +109,9 @@
         }
       }
     }
+  }
+
+  &__image{
+    border-radius: 20px;
   }
 }

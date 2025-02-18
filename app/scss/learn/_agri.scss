@@ -5,6 +5,7 @@
 
     &__title {
         text-align: center;
+        color: var(--text-green);
     }
 
     &__flex {
@@ -20,7 +21,8 @@
 
     &__image-wrapper {}
 
-    &__image {}
+    &__image {
+    }
 
     &__statement {
         margin-bottom: 30px;
@@ -29,7 +31,7 @@
     /* Circle shape in the top-left corner */
     &__circle1 {
         position: absolute;
-        top: 43%;
+        top: 66%;
         left: 31%;
         width: 300px;
         height: 300px;
@@ -40,7 +42,7 @@
     
     &__circle2 {
         position: absolute;
-        bottom: 38%;
+        bottom: 60%;
         right: -2%;
         width: 300px;
         height: 300px;
@@ -111,13 +113,14 @@
     }
 
     &__image-wrapper {
-        flex: 1; /* Allow the image to take up available space */
-        display: flex;
-        justify-content: center;
+        flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-block-start: 25px;
     }
 
     &__image {
-        height: 280px;
+        height: 440px;
         object-fit: cover;
     }
 

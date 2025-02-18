@@ -18,7 +18,7 @@
   &__headline-container {
     box-sizing: border-box;
     position: absolute;
-    top: 40%; // Converts 40px to rem
+    top: 31%; // Converts 40px to rem
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -29,19 +29,21 @@
 
     @include u.breakpoint(medium) {
       width: 450px;
-      top: 90%;
+      top: 82%;
       left: 60%;
     }
 
     @include u.breakpoint(large) {
       width: 985px;
-      top: 100%;
-      left: 50%;
+      top: 80%;
+      left: 60%;
       padding: u.rem(20);
     }
   }
 
   &__headline {
+    color: var(--text-green);
+    font-size: u.rem(70);
   }
 
   &__flex {
@@ -70,7 +72,7 @@
 
     &:hover {
       background-color: var(--flex-bg); // Hover background color
-      height: u.rem(200); // Expands height to show full content
+      height: u.rem(600); // Expands height to show full content
     }
   }
 
@@ -116,4 +118,164 @@
       display: block;
     }
   }
+
+  &__main-wrapper{
+    display: flex;
+      justify-content: space-between;
+      gap: u.rem(32);
+      padding-block-end: 30px;
+  }
+
+  &__main-image-wrapper{}
+
+  &__main-image{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        
+    @include u.breakpoint(large) {
+      height: 600px;
+      width: 500px;
+    }
+  }
+
+  &__main-title{
+    text-align: center;
+      background-color: var(--flex-head-bg);
+      border-radius: 20px;
+      padding: 10px;
+  }
+
+  &__main-description{}
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: u.rem(20);
+    margin-bottom: u.rem(20);
+    font-size: u.rem(10);
+
+
+    @include u.breakpoint(large) {
+        font-size: u.rem(16);
+    }
+
+    th, td {
+        padding: u.rem(8);
+        text-align: left;
+    }
+
+    th {
+        background-color: var(--table-bg);
+        font-weight: bold;
+        padding: 10px;
+        text-align: center;
+    }
+
+    td {
+        background-color: var(--table-row-bg, #ffffff);
+    }
+
+    tr:nth-child(odd) {
+        td {
+        background-color: var(--table-bg);
+        }
+    }
+
+    tr:hover {
+        background-color: var(--table-hover-bg, #e9e9e9);
+    }
 }
+}
+
+.equation{
+
+  &__description{}
+
+  &__container{
+    text-align: center;
+  }
+
+  &__formula{}
+}
+
+.contributor {
+  margin: 40px 0;
+  text-align: center;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: u.rem(30);
+    margin-bottom: u.rem(40);
+    flex-wrap: wrap;
+
+    @include u.breakpoint(large) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__image {
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+    @include u.breakpoint(large) {
+      height: 400px;
+      width: 40%;
+    }
+  }
+
+  &__theme {
+    align-content: center;
+    max-width: 90ch;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: u.rem(10);
+    color: var(--text-green);
+  }
+
+  &__statement {
+    text-align: justify;
+    font-size: u.rem(20);
+  }
+
+
+}
+
+.calculation{
+
+  &__wrapper{}
+
+  &__title{
+    color: var(--text-green);
+    text-align: center;
+    margin-bottom: u.rem(30);
+  }
+
+  &__statement{
+    text-align: center;
+  }
+
+  &__image-wrapper{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include u.breakpoint(large) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__image{
+    width: 500px;
+    height: 600px;
+  }
+
+  &__theme{
+  }
+}
+
+

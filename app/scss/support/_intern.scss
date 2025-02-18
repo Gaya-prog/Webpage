@@ -1,0 +1,66 @@
+@use '../util/' as u;
+
+.intern{
+
+    &__container{
+    }
+
+    &__title{
+        text-align: center;
+        color: var(--text-green);
+    }
+
+    &__description{
+        text-align: center;
+    }
+
+    &__image-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include u.breakpoint(large) {
+            flex-wrap: nowrap;
+          }
+    }
+ 
+    &__image{
+        height: 462px;
+        width: 462px;
+    }
+
+    &__section{}
+
+    &__subtitle{
+        margin-bottom: 0;
+    }
+
+    &__content{
+        margin-bottom: 40px;
+        background: var(--flex-bg);
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    &__cta{
+        text-align: center;
+    }
+
+    &__button{
+        font-size: u.rem(20);
+    }
+
+    &__mail{
+    }
+
+    &__apply{
+        display: inline-flex;
+        align-items: center;
+        gap: 8px; /* Adjust spacing between text and icon */
+    }
+
+    &__icon{
+        height: 30px;
+        width: 30px;
+    }
+}

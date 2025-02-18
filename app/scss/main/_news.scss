@@ -21,7 +21,7 @@
     font-size: u.rem(21);
     line-height: 1.2;
     text-transform: uppercase;
-    color: var(--text-light);
+    color: var(--text-dark);
     font-weight: 700;
 }
 
@@ -47,7 +47,7 @@
     background-color: hsl(60, 29%, 64%);
     border-radius: 20px;
     width: 100%; /* Ensure it takes the full width of the grid cell */
-    max-width: 400px; /* Optional: restrict max width */
+    max-width: 700px; /* Optional: restrict max width */
 }
 
 .home-news__time {
@@ -66,9 +66,9 @@
 
 .home-news__title {
     font-weight: 600;
-    font-size: u.rem(15);
+    font-size: u.rem(28);
     line-height: 1.27;
-    padding-bottom: 10px;
+    margin: 0;
 }
 
 .home-news__button {

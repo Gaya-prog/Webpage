@@ -36,9 +36,11 @@
 
   &__title {
     text-align: center;
+    color: var(--text-maroon);
     
 
     @include u.breakpoint(large) {
+      font-size: u.rem(50);
     }
   }
 

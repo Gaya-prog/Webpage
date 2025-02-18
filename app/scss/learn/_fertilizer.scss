@@ -9,7 +9,6 @@
     @include u.breakpoint(large) {
       flex-direction: row;
       flex-wrap: nowrap;
-      justify-content: space-between;
       gap: u.rem(30);
     }
   }
@@ -49,12 +48,13 @@
   &__title {
     margin-bottom: u.rem(20);
     text-align: center;
-    background-color: var(--flex-head-bg);
     border-radius: 20px;
     padding: 10px;
+    color: var(--text-green);
 
     @include u.breakpoint(large) {
       text-align: left;
+      font-size: u.rem(50);
     }
   }
 
@@ -94,11 +94,11 @@
   &__image{
     border-radius: u.rem(10);
     object-fit: cover;
-    gap: u.rem(30);
-    margin-block-end: 30px;
+    gap: u.rem(20);
+    margin-block-end: 10px;
 
     @include u.breakpoint(large) {
-      height: u.rem(585);
+      height: u.rem(286);
     }
   }
 
@@ -107,15 +107,19 @@
     width: 100%;
 
     @include u.breakpoint(large) {
-      width: 50%;
+      width: 80%;
     }
   }
 
   &__headline{
     margin-bottom: 20px;
-    background-color: var(--flex-head-bg);
     border-radius: 20px;
     padding: 15px;
+    color: var(--text-maroon);
+
+    @include u.breakpoint(large) {
+      font-size: u.rem(50);
+    }
   }
 
   &__title{
@@ -123,6 +127,7 @@
     background-color: var(--flex-head-bg);
     border-radius: 20px;
     padding: 10px;
+    text-align: center;
   }
 
   &__statement{

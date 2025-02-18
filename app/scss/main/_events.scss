@@ -19,11 +19,25 @@
     &__image{
         float: none;
         text-align: center;
-        padding-bottom: 1.25em;
 
         @include u.breakpoint(large) { 
         float: left;
         }
+    }
+
+    &__workshop-image{
+        height: 258px;
+        width: auto;
+        margin: 0;
+        padding-inline-start: 14px;
+        border-radius: 20px;
+    }
+
+    &__publication-image{
+        height: 338px;
+        width: 280px;
+        margin-block-start: 14px;
+        border-radius: 20px;
     }
 
     &__content{
