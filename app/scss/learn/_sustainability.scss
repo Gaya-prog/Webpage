@@ -18,15 +18,17 @@
       }
           
     &__image {
-      width: 300px;
-      height: 300px;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      border-radius: u.rem(10);
+      box-shadow: 0 u.rem(6) u.rem(12) rgba(0, 0, 0, 0.1);
       object-fit: cover;
-          
+      margin-bottom: u.rem(32); // Space below the image if necessary
+      max-width: 50%; // Ensure it doesn't overflow the container
+      margin: 0 auto; // Center the image horizontally
+    
       @include u.breakpoint(large) {
-        height: 400px;
-        width: 400px;
+        // Adjustments for larger screens if necessary
+        width: 36%;
+        height: 350px;
       }
       }
           
@@ -39,7 +41,44 @@
       background-color: var(--flex-head-bg);
       border-radius: 20px;
       padding: 10px;
+      } 
+
+    &__flex-item{
+        flex: 1 1 calc(33.33% - u.rem(16)); // Ensures all items have equal sizes
+        padding: u.rem(15); // Space inside each box
+        margin: u.rem(8); // Adds spacing between flex items
+        background-color: var(--flex-bg); // Background color for visibility
+        box-shadow: 0 u.rem(4) u.rem(6) rgba(0, 0, 0, 0.1); // Subtle shadow
+        border-radius: u.rem(8); // Rounded corners
+        text-align: center; // Centers text inside the box
+        height: u.rem(405); // Ensures consistent height
+        display: flex; // Flexbox for content alignment
+        justify-content: center; // Center content vertically
+        flex-wrap: wrap;
+    
+      // Large screens (900px and above)
+      @include u.breakpoint(large) {
+          height: u.rem(406);
+          flex-wrap: nowrap;
       }
+    
+      // Medium screens (700px to 899px)
+      @include u.breakpoint-down(medium) {
+          height: auto; // Increase height as screen shrinks
+      }
+    
+      // Small screens (below 700px)
+      @include u.breakpoint-down(small) {
+          height: auto; // Further increase height for small screens
+          flex-wrap: wrap;
+      }
+    
+      // Extra small screens (below 453px)
+      @include u.breakpoint-down(xsmall) {
+          height: auto; // Allow dynamic height based on content
+          flex-wrap: wrap;
+      }
+    }
           
     &__statement {
       text-align: justify;
@@ -95,7 +134,7 @@ margin-bottom: 20px;
     
         &:hover {
           background-color: var(--flex-bg); // Hover background color
-          height: u.rem(200); // Expands height to show full content
+          height: u.rem(300); // Expands height to show full content
         }
     }
 
@@ -146,7 +185,7 @@ margin-bottom: 20px;
         height: 20px; // Maintain aspect ratio
 
         @include u.breakpoint(large) {
-          height: 35px;
+          height: 24px;
           width: auto;
         }
     }

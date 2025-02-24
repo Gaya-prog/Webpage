@@ -19,20 +19,23 @@
       }    
 
     &__image{
-        border-radius: u.rem(10);
         box-shadow: 0 u.rem(6) u.rem(12) rgba(0, 0, 0, 0.1);
         object-fit: cover;
         margin-bottom: u.rem(32); // Space below the image if necessary
-        max-width: 100%; // Ensure it doesn't overflow the container
-        margin: 0 auto; // Center the image horizontally
     
         @include u.breakpoint(large) {
         // Adjustments for larger screens if necessary
-        width: 32%;
+        width: 33%;
     }
     }
 
-    &__details{}
+    &__details{
+
+        li{
+            font-weight: normal;
+            font-size: u.rem(22);
+        }
+    }
 
     &__time{
         font-size: u.rem(20);
@@ -43,6 +46,6 @@
     }
 
     &__button{
-        font-size: u.rem(20);
+        font-size: u.rem(50);
     }
 }

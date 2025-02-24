@@ -1,117 +1,45 @@
 @use '../util/' as u;
 
-.contact-flex{
-  display: flex;
-  gap: 30px;
-}
-
-.visit-us__flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-between;
-  max-width: 700px;
-
-  @include u.breakpoint(medium) {
-    flex-wrap: nowrap;
-  }
-}
-
-.office-info {
-  background-color: var(--flex-bg);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex: 1 1 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  &__image {
-    height: 300px;
-    width: auto;
-    border-radius: 20px;
-
-    @include u.breakpoint(large) {
-      height: 670px;
-      width: 650px;
-    }
-  }
-}
-
-.contact-info {
-  background-color: var(--flex-bg);
-  padding: 1.5rem;
-  display: flex;
-  border-radius: 20px;
-  flex-direction: column;
-  margin: 0 auto;
-  max-width: u.rem(800);
-  text-align: center;
-  justify-content: center;
-
-  &__flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: space-between;
-  
-    @include u.breakpoint(medium) {
-      flex-wrap: nowrap;
-    }
-  }
-
-  &__title {
-    font-size: u.rem(40);
-    margin: 0;
-  }
-
+.visit{
 
   &__socials {
     gap: 10px;
     font-size: u.rem(32);
     text-align: center;
   }
+}
+
+.contact-info{
+
+  &__icon-box{
+    position: absolute;
+    top: 134%;
+    right: 20%;
+
+    @include u.breakpoint(large) {
+    top: 103%;
+    right: 13%;
+  }
+}
 
   &__icon{
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     display: inline-flex; /* Makes each icon appear below the title */
     margin: 15px auto; /* Centers the icons */
+
+    @include u.breakpoint(large) {
+      height: 80px;
+      width: 80px;
+    }
   }
 
   &__box{
     text-align: center;
   }
 
-  &__subtitle{
-    font-size: u.rem(40);
-  }
-
   &__button{
-    font-size: u.rem(32);
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-
-    li {
-      margin: 0.5rem 0;
-
-      a {
-        color: var(--link-hover-color);
-        text-decoration: none;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: var(--link-hover-color);
-        }
-      }
-    }
-  }
-
-  &__image{
-    border-radius: 20px;
+    font-size: u.rem(50);
+    margin:30px 0;
   }
 }

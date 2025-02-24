@@ -95,16 +95,34 @@
     box-shadow: 0 u.rem(4) u.rem(6) rgba(0, 0, 0, 0.1); // Subtle shadow
     border-radius: u.rem(8); // Rounded corners
     text-align: center; // Centers text inside the box
-    height: u.rem(640); // Ensures consistent height
+    height: u.rem(264); // Ensures consistent height
     display: flex; // Flexbox for content alignment
     flex-direction: column; // Align content vertically
     justify-content: center; // Center content vertically
     flex-wrap: wrap;
 
-    @include u.breakpoint(large) {
-      height: u.rem(264); // Ensures consistent height
+     // Large screens (900px and above)
+     @include u.breakpoint(large) {
+      height: u.rem(264);
       flex-wrap: nowrap;
-    }
+  }
+
+  // Medium screens (700px to 899px)
+  @include u.breakpoint-down(medium) {
+      height: auto; // Increase height as screen shrinks
+  }
+
+  // Small screens (below 700px)
+  @include u.breakpoint-down(small) {
+      height: auto; // Further increase height for small screens
+      flex-wrap: wrap;
+  }
+
+  // Extra small screens (below 453px)
+  @include u.breakpoint-down(xsmall) {
+      height: auto; // Allow dynamic height based on content
+      flex-wrap: wrap;
+  }
 }
 
 &__flex-item:nth-child(odd) {
@@ -121,6 +139,7 @@
 
 &__text{
   padding: 10px;
+  align-content: center;
 }
 
 &__description{

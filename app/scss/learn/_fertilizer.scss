@@ -1,124 +1,183 @@
 @use '../util/' as u;
 
 .fertilizer {
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: u.rem(30);
 
-    @include u.breakpoint(large) {
-      flex-direction: row;
+  &__title{
+    text-align: center;
+    color: var(--text-green);
+  }
+
+  &__flex-item {
+    flex: 1 1 calc(33.33% - u.rem(16)); // Ensures all items have equal sizes
+    padding: u.rem(15); // Space inside each box
+    margin: u.rem(8); // Adds spacing between flex items
+    background-color: var(--flex-bg); // Background color for visibility
+    box-shadow: 0 u.rem(4) u.rem(6) rgba(0, 0, 0, 0.1); // Subtle shadow
+    border-radius: u.rem(8); // Rounded corners
+    text-align: center; // Centers text inside the box
+    height: u.rem(405); // Ensures consistent height
+    display: flex; // Flexbox for content alignment
+    flex-direction: column; // Align content vertically
+    justify-content: center; // Center content vertically
+    flex-wrap: wrap;
+
+  // Large screens (900px and above)
+  @include u.breakpoint(large) {
+      height: u.rem(405);
       flex-wrap: nowrap;
-      gap: u.rem(30);
-    }
   }
 
-  &__image-wrapper {
-    position: relative; /* Allow absolute positioning of the circle */
-    width: 100%;
-    margin-bottom: u.rem(16);
-
-    @include u.breakpoint(large) {
-      width: 45%;
-      margin-bottom: 0;
-    }
+  // Medium screens (700px to 899px)
+  @include u.breakpoint-down(medium) {
+      height: auto; // Increase height as screen shrinks
   }
 
-  &__image {
-    width: 100%;
+  // Small screens (below 700px)
+  @include u.breakpoint-down(small) {
+      height: auto; // Further increase height for small screens
+      flex-wrap: wrap;
+  }
+
+  // Extra small screens (below 453px)
+  @include u.breakpoint-down(xsmall) {
+      height: auto; // Allow dynamic height based on content
+      flex-wrap: wrap;
+  }
+}
+
+  &__flex-image {
     border-radius: u.rem(10);
     box-shadow: 0 u.rem(6) u.rem(12) rgba(0, 0, 0, 0.1);
     object-fit: cover;
-    height: auto;
-
+    margin-bottom: u.rem(32); // Space below the image if necessary
+    max-width: 50%; // Ensure it doesn't overflow the container
+    margin: 0 auto; // Center the image horizontally
+  
     @include u.breakpoint(large) {
-      height: u.rem(500);
+      // Adjustments for larger screens if necessary
+      width: 36%;
     }
   }
 
-  &__theme {
-    text-align: justify;
-    width: 100%;
-
-    @include u.breakpoint(large) {
-      width: 50%;
-    }
-  }
-
-  &__title {
-    margin-bottom: u.rem(20);
-    text-align: center;
-    border-radius: 20px;
+  &__text{
     padding: 10px;
-    color: var(--text-green);
-
-    @include u.breakpoint(large) {
-      text-align: left;
-      font-size: u.rem(50);
-    }
+    text-align: justify;
+    align-content: center;
   }
 
-  &__statement {
-
-    @include u.breakpoint(large) {
-    }
+  &__statement{
+    align-content: center
+    ;
   }
-}
+
+  &__flex-item:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  
+  &__flex-item:nth-child(even) {
+    flex-direction: row;
+  }
+  
+  &__flex-item:nth-child(3) {
+    justify-content: space-between;
+  }
+  }
 
 .food{
 
-  &__wrapper{
-    display: flex;
-    flex-direction: row-reverse;
-    gap: u.rem(32);
+  &__flex-item {
+    flex: 1 1 calc(33.33% - u.rem(16)); // Ensures all items have equal sizes
+    padding: u.rem(15); // Space inside each box
+    margin: u.rem(8); // Adds spacing between flex items
+    background-color: var(--flex-bg); // Background color for visibility
+    box-shadow: 0 u.rem(4) u.rem(6) rgba(0, 0, 0, 0.1); // Subtle shadow
+    border-radius: u.rem(8); // Rounded corners
+    text-align: center; // Centers text inside the box
+    height: u.rem(405); // Ensures consistent height
+    display: flex; // Flexbox for content alignment
+    flex-direction: column; // Align content vertically
+    justify-content: center; // Center content vertically
     flex-wrap: wrap;
 
-    @include u.breakpoint(large) {
+  // Large screens (900px and above)
+  @include u.breakpoint(large) {
+      height: u.rem(405);
       flex-wrap: nowrap;
-      justify-content: space-between;
-      gap: u.rem(30);
+  }
+
+  // Medium screens (700px to 899px)
+  @include u.breakpoint-down(medium) {
+      height: auto; // Increase height as screen shrinks
+  }
+
+  // Small screens (below 700px)
+  @include u.breakpoint-down(small) {
+      height: auto; // Further increase height for small screens
+      flex-wrap: wrap;
+  }
+
+  // Extra small screens (below 453px)
+  @include u.breakpoint-down(xsmall) {
+      height: auto; // Allow dynamic height based on content
+      flex-wrap: wrap;
   }
 }
 
-  &__image-wrapper{
-    position: relative; /* Allow absolute positioning of the circle */
-    width: 100%;
-    margin-bottom: u.rem(20);
-
-    @include u.breakpoint(large) {
-      width: 45%;
-      margin-bottom: 0;
-    }
-  }
-
-  &__image{
+  &__flex-image {
     border-radius: u.rem(10);
+    box-shadow: 0 u.rem(6) u.rem(12) rgba(0, 0, 0, 0.1);
     object-fit: cover;
-    gap: u.rem(20);
-    margin-block-end: 10px;
-
+    margin-bottom: u.rem(32); // Space below the image if necessary
+    max-width: 50%; // Ensure it doesn't overflow the container
+    margin: 0 auto; // Center the image horizontally
+  
     @include u.breakpoint(large) {
-      height: u.rem(286);
+      // Adjustments for larger screens if necessary
+      width: 36%;
     }
   }
 
-  &__theme{
+  &__flex-2image {
+    border-radius: u.rem(10);
+    box-shadow: 0 u.rem(6) u.rem(12) rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    margin-bottom: u.rem(32); // Space below the image if necessary
+    max-width: 50%; // Ensure it doesn't overflow the container
+    margin: 0 auto; // Center the image horizontally
+  
+    @include u.breakpoint(large) {
+      // Adjustments for larger screens if necessary
+      width: 29%;
+    }
+  }
+
+  &__text{
+    padding: 10px;
     text-align: justify;
-    width: 100%;
-
-    @include u.breakpoint(large) {
-      width: 80%;
-    }
+    align-content: center;
   }
+
+  &__flex-item:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  
+  &__flex-item:nth-child(even) {
+    flex-direction: row;
+  }
+  
+  &__flex-item:nth-child(3) {
+    justify-content: space-between;
+  }
+
 
   &__headline{
     margin-bottom: 20px;
     border-radius: 20px;
     padding: 15px;
     color: var(--text-maroon);
+    text-align: center;
 
     @include u.breakpoint(large) {
-      font-size: u.rem(50);
     }
   }
 

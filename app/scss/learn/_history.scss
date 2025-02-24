@@ -17,7 +17,7 @@
     object-fit: cover;
     margin-bottom: u.rem(32);
     @include u.breakpoint(large) {
-        }
+    }
 }
 
 &__image{
@@ -27,7 +27,7 @@
   width: 330px;
   
   @include u.breakpoint(large) {
-  height: 400px;
+  height: 375px;
   width: 500px;
   }
 }
@@ -106,8 +106,6 @@
 
 &__statement {
     text-align: justify;
-    margin-block-end: 40px;
-    padding-bottom: 30px;
 }
 }
 

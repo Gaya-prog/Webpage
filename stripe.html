@@ -39,7 +39,7 @@
 
             <div class="topnav__site-tagline">Less is the New Lead to <br> Abundance </div>
 
-            <a class="topnav__button button primary" href="" target="_blank">Support Our Mission</a>
+            <a class="topnav__button button primary" href="stripe.html" target="_blank">Support Our Mission</a>
         </div>
 
         <div class="topnav__bar">
@@ -110,20 +110,18 @@
     </header>
 
 <body>
-    <div class="donate__container">
+    <div class="donate__main-container">
         <div class="donate__description">
-          <div class="donate__container">
-            <div class="donate__image">
-              <img
-                src="/images/donate.jpg"
-                alt="Climate Change Mitigation"
-                class="donate__donation-image"
-              />
-            </div>
-            <div class="donate__description"> 
-              <h2>
-                🌍 Support Climate Change Mitigation through Lamatu, the Controlled-release Technology 🌱
-              </h2>
+              <h1 class="donate__title">
+                <span class="highlight-green">Call-To-Action</span>
+              </h1>
+              <div class="intern__image-container">
+                <img class="intern__image" src="images/donation-left.jpg" alt="Intern Picture">
+                <img class="intern__image" src="images/donation-middle.jpg" alt="Intern Picture">
+                <img class="intern__image" src="images/donation-right.jpg" alt="Intern Picture">
+                </div>
+
+            <div class="donate__description">
               <p>
                 We invite you to join us in the fight against climate change by supporting Nanofertech's innovative CRT, non-polymer coating material embedded with AI navigation. Your donation will directly fund research and development, as well as support subsistence farming for underserved farmers in Malaysia.
               </p>
@@ -134,11 +132,11 @@
                 Together, we can make a meaningful impact on both the climate and the livelihoods of vulnerable communities. Every donation counts!
               </p>
               <p><strong>Donate now and be part of the change. 🌱🌎</strong></p>
-              <label for="amount">Donation Amount (MYR)</label>
-              <input type="number" id="amount" name="amount" min="1" placeholder="Enter your amount" required />
+              <label for="amount">Donation Amount (MYR) </label>
+              <input type="number" id="amount" name="amount" min="1" placeholder="Enter your amount" required /> 
+              <img class="donate__logo" src="images/stripelogo.webp" alt="Stripe Logo"/>
               <button id="donate-button" class="button primary donate__button">Donate</button>
-              <img class="donate__logo" src="images/stripelogo.webp" alt="Stripe Logo" />
-
+              
             <form id="payment-form" style="display: none;">
                 <div id="card-container">
                     <h4>Enter your card details:</h4>

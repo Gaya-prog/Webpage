@@ -45,7 +45,8 @@
   }
 
   &__statement {
-
+    text-align: justify;
+    
     @include u.breakpoint(large) {
     }
   }

@@ -7,32 +7,32 @@
     padding: 20px;
     background: var(--flex-bg);
     border-radius: 10px;
+    max-width: 1142px;
 
     @include u.breakpoint(large) {
       flex-wrap: nowrap;
     }
   }
 
-  /* Image Section */
-  &__image {
-    flex: 1; 
-    padding: 10px;
-
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
-    }
+  &__title{
+    text-align: center;
+    margin: 40px 0;
   }
 
+  /* Image Section */
+  &__donation-image {
+      width: 31%;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
   &__description {
-    flex: 2;
-    padding: 20px;
+    padding: 0 24px;
+    justify-items: center;
   }
 
   &__logo{
-    width: 40px;
+    width: 52px;
   }
 
   &__button{

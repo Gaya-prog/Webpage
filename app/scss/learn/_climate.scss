@@ -8,10 +8,16 @@
   }
 
   &__image {
-    width: 100%;
-    height: auto;
+    height: 280px;
+    width: 280px;
     object-fit: cover;
+    border-radius: 20px;
+
+    @include u.breakpoint(medium) {
+      height: 354px;
+      width: 424px;
   }
+}
 
   &__theme {}
 
@@ -43,7 +49,11 @@
 
   &__headline {
     color: var(--text-green);
-    font-size: u.rem(70);
+    font-size: u.rem(22);
+
+    @include u.breakpoint(large) {
+      font-size: u.rem(70);
+  }
   }
 
   &__flex {
@@ -97,7 +107,7 @@
   }
 
   &__title {
-    font-size: u.rem(20); // Font size for the title
+    font-size: u.rem(26); // Font size for the title
     font-weight: bold;
     margin-bottom: u.rem(8); // Space below the title
     opacity: 1; // Title always visible
@@ -119,6 +129,17 @@
     }
   }
 
+  &__box-image{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+
+    @include u.breakpoint(large) {
+      height: 200px;
+      width: 313px;
+    }
+  }
+
   &__main-wrapper{
     display: flex;
       justify-content: space-between;
@@ -129,14 +150,14 @@
   &__main-image-wrapper{}
 
   &__main-image{
-    width: 300px;
-    height: 300px;
+    width: 369px;
+    height: 153px;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
         
     @include u.breakpoint(large) {
       height: 600px;
-      width: 500px;
+      width: 100%;
     }
   }
 
@@ -189,6 +210,7 @@
 }
 }
 
+
 .equation{
 
   &__description{}
@@ -221,7 +243,7 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 
     @include u.breakpoint(large) {
-      height: 400px;
+      height: 371px;
       width: 40%;
     }
   }

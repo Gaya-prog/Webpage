@@ -38,7 +38,8 @@
 
     &__wrapper{
         display: flex;
-        align-items: flex-start;
+        max-width: 950px;
+        margin: 0 auto;
         gap: 40px; /* Space between images and text */
     }
 
