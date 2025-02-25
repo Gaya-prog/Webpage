@@ -768,6 +768,12 @@ a, a:visited, a:active {
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
+}
+@media (min-width: 56.25em) {
+  .home-publication__row {
+    flex-wrap: nowrap;
+  }
 }
 .home-publication__header-bar {
   text-transform: uppercase;
@@ -795,10 +801,14 @@ a, a:visited, a:active {
   background-color: hsl(60, 29%, 64%);
   border-radius: 20px;
   flex: 1;
-  max-width: 71%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+@media (min-width: 56.25em) {
+  .home-publication__item {
+    max-width: 71%;
+  }
 }
 .home-publication__image {
   width: 300px;
@@ -842,7 +852,6 @@ a, a:visited, a:active {
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 2rem;
-  max-width: 50%;
   margin: 0 auto;
 }
 @media (min-width: 56.25em) {
@@ -1099,7 +1108,6 @@ a, a:visited, a:active {
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 2rem;
-  max-width: 50%;
   margin: 0 auto;
 }
 @media (min-width: 56.25em) {
@@ -1237,7 +1245,6 @@ a, a:visited, a:active {
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 2rem;
-  max-width: 50%;
   margin: 0 auto;
 }
 @media (min-width: 56.25em) {
@@ -1306,7 +1313,6 @@ a, a:visited, a:active {
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 2rem;
-  max-width: 50%;
   margin: 0 auto;
 }
 @media (min-width: 56.25em) {
@@ -1320,7 +1326,6 @@ a, a:visited, a:active {
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 2rem;
-  max-width: 50%;
   margin: 0 auto;
 }
 @media (min-width: 56.25em) {
@@ -1459,7 +1464,7 @@ a, a:visited, a:active {
 .history__headline-container {
   box-sizing: border-box;
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -1611,7 +1616,7 @@ a, a:visited, a:active {
 }
 .climate__flex-item:hover {
   background-color: var(--flex-bg);
-  height: 37.5rem;
+  height: 29.375rem;
 }
 .climate__content {
   position: absolute;
@@ -2235,6 +2240,9 @@ a, a:visited, a:active {
     width: 33%;
   }
 }
+.detailed-events__details {
+  text-align: justify;
+}
 .detailed-events__details li {
   font-weight: normal;
   font-size: 1.375rem;
@@ -2256,15 +2264,7 @@ a, a:visited, a:active {
 }
 
 .contact-info__icon-box {
-  position: absolute;
-  top: 134%;
-  right: 20%;
-}
-@media (min-width: 56.25em) {
-  .contact-info__icon-box {
-    top: 103%;
-    right: 13%;
-  }
+  text-align: center;
 }
 .contact-info__icon {
   height: 60px;
@@ -2283,7 +2283,7 @@ a, a:visited, a:active {
 }
 .contact-info__button {
   font-size: 3.125rem;
-  margin: 30px 0;
+  margin-bottom: 30px;
 }
 
 .disclaimer__title {
@@ -2333,8 +2333,15 @@ a, a:visited, a:active {
 }
 .our-work__image {
   margin: 0 auto;
-  height: 380px;
-  width: 460px;
+  height: 332px;
+  width: 332px;
+}
+@media (min-width: 56.25em) {
+  .our-work__image {
+    margin: 0 auto;
+    height: 380px;
+    width: 460px;
+  }
 }
 .our-work__description {
   text-align: center;
@@ -2471,7 +2478,7 @@ a, a:visited, a:active {
   }
 }
 .solution__image {
-  width: 300px;
+  width: 332px;
   height: 300px;
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -2519,22 +2526,21 @@ a, a:visited, a:active {
 }
 .benefits__grid-item {
   position: relative;
-  width: 92%;
-  height: 200px;
+  width: 100%;
+  height: 317px;
   overflow: hidden;
   border-radius: 10px;
 }
 @media (min-width: 56.25em) {
   .benefits__grid-item {
     height: 420px;
+    width: 92%;
   }
 }
 .benefits__grid-item:hover .benefits__image {
   transform: scale(1.05);
 }
 .benefits__image {
-  width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: transform 0.3s ease-in-out;
@@ -2933,7 +2939,7 @@ a, a:visited, a:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bold;
   text-transform: uppercase;
   opacity: 0;
@@ -2999,6 +3005,7 @@ a, a:visited, a:active {
 .donate__button {
   font-size: 3rem;
   margin-top: 0.9375rem;
+  margin-bottom: 1.875rem;
 }
 .donate form {
   margin-top: 20px;
@@ -3098,6 +3105,7 @@ a, a:visited, a:active {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1800px;
 }
 @media (min-width: 56.25em) {
   .intern__image-container {
@@ -3106,7 +3114,7 @@ a, a:visited, a:active {
 }
 .intern__image {
   height: 462px;
-  width: 462px;
+  width: 391px;
 }
 .intern__subtitle {
   margin-bottom: 0;
@@ -3136,7 +3144,7 @@ a, a:visited, a:active {
   text-align: center;
 }
 .intern__button {
-  font-size: 1.25rem;
+  font-size: 3.125rem;
 }
 .intern__apply {
   display: inline-flex;
@@ -3164,7 +3172,7 @@ a, a:visited, a:active {
 }
 .partnership__main-image {
   height: 462px;
-  width: 462px;
+  width: 391px;
 }
 .partnership__flex {
   display: flex;

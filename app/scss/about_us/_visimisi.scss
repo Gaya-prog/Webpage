@@ -16,7 +16,6 @@
     box-shadow: 0 u.rem(6) u.rem(12) rgba(0, 0, 0, 0.1);
     object-fit: cover;
     margin-bottom: u.rem(32); // Space below the image if necessary
-    max-width: 50%; // Ensure it doesn't overflow the container
     margin: 0 auto; // Center the image horizontally
   
     @include u.breakpoint(large) {

@@ -18,6 +18,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        max-width: 1800px;
 
         @include u.breakpoint(large) {
             flex-wrap: nowrap;
@@ -26,7 +27,7 @@
  
     &__image{
         height: 462px;
-        width: 462px;
+        width: 391px;
     }
 
     &__section{}
@@ -65,7 +66,7 @@
     }
 
     &__button{
-        font-size: u.rem(20);
+        font-size: u.rem(50);
     }
 
     &__mail{
